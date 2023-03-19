@@ -267,7 +267,7 @@
                                                 @else
                                                     <ul class="sub-menu">
                                                         <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
-                                                        {{-- <li><a href="{{ route('user.edit') }}">Toko Saya</a></li> --}}
+                                                        <li><a href="{{ route('user.show') }}">Toko Saya</a></li>
                                                     </ul>
                                                 @endif
                                             </li>

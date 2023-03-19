@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangeUserType;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
@@ -59,7 +60,8 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
-    // Route::get('/user/edit/{user_id}', UserDaftarComponent::class)->name('user.edit');
+    Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
+    Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){

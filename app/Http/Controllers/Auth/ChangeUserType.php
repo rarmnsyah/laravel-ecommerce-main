@@ -9,11 +9,8 @@ use App\Http\Controllers\Controller;
 class ChangeUserType extends Controller
 {
     public function index(){
-        if (auth()->user()->utpe == 'USR'){
-            return view('auth.update');
-        } else {
-            return redirect('/');    
-        }
+        return view('auth.update');
+
     }
 
     public function update(User $user){

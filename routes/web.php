@@ -60,12 +60,13 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    // Route::get('/user/dashboard/anjay', [UserDashboardComponent::class, 'anjay'])->name('user.dashboard.anjay');
     Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
     Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
+    Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
-    Route::get('/admin/myAccount', ViewMyAccount::class)->name('admin.myaccount');
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');

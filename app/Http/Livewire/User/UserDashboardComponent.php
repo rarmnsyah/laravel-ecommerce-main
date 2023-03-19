@@ -10,4 +10,9 @@ class UserDashboardComponent extends Component
     {
         return view('livewire.user.user-dashboard-component');
     }
+
+    // public function anjay()
+    // {
+    //     return view('livewire.user.user-dashboard-component');
+    // }
 }

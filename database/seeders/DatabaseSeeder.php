@@ -24,6 +24,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@example.com',
             'utype' => 'ADM'
         ]);
+        \App\Models\User::factory()->create([
+            'name' => 'User',
+            'email' => 'rarmnsyah@gmail.com',
+            'utype' => 'USR'
+        ]);
         \App\Models\Category::factory(6)->create();
         \App\Models\Product::factory(16)->create();
         \App\Models\HomeSlider::factory(2)->create();

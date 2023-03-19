@@ -188,7 +188,7 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg')}}" alt="#">
+                                    <img src="{{ asset('assets/imgs/shop/category-thumb-3.jpg')}}" alt="#">
                                 </div>
                                 <div class="content pt-10">
                                     <h5><a href="product-details.html">Chen Cardigan</a></h5>
@@ -200,7 +200,7 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg')}}" alt="#">
+                                    <img src="{{ asset('assets/imgs/shop/category-thumb-4.jpg')}}" alt="#">
                                 </div>
                                 <div class="content pt-10">
                                     <h6><a href="product-details.html">Chen Sweater</a></h6>
@@ -212,7 +212,7 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg')}}" alt="#">
+                                    <img src="{{ asset('assets/imgs/shop/category-thumb-5.jpg')}}" alt="#">
                                 </div>
                                 <div class="content pt-10">
                                     <h6><a href="product-details.html">Colorful Jacket</a></h6>

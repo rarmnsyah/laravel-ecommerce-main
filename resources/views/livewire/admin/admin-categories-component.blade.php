@@ -53,7 +53,7 @@
                                         @foreach($categories as $category)
                                             <tr>
                                                 <td>{{++$i}}</td>
-                                                <td><img src="{{ asset('assets/imgs/categories')}}/{{$category->image}}" width="60"></td>
+                                                <td><img src="{{ asset('assets/imgs/categories')}}/{{$category->image}}.jpg" width="60"></td>
                                                 <td>{{$category->name}}</td>
                                                 <td>{{$category->slug}}</td>
                                                 <td>{{$category->is_popular == 1 ? 'Yes':'No'}}</td>

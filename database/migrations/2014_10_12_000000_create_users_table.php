@@ -19,7 +19,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('utype')->default('USR')->comment('ADM for Admin and USR for nomarl admin');
+            $table->enum('utype', ['USR', 'ADM'])->default('USR')->comment('ADM for Admin and USR for nomarl admin');
+            $table->date('tanggal_lahir')->nullable();
+            $table->enum('jenis_kelamin', ['L', 'P'])->nullable();
+            $table->string('image')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kabupaten')->nullable();
+            $table->string('alamat')->nullable();     
             $table->rememberToken();
             $table->timestamps();
         });

@@ -14,6 +14,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/imgs/theme/favicon.ico') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="{{ asset('assets/css/nucleo-icons.css') }}" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
     @livewireStyles
 </head>
 
@@ -231,7 +240,7 @@
                                         </li>
                                         </li>
                                         {{-- <li> --}}
-                                            {{-- <ul class="more_slide_open" style="display: none;">
+                                        {{-- <ul class="more_slide_open" style="display: none;">
                                                 <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Beauty,
                                                         Health</a></li>
                                                 <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Bags and
@@ -253,7 +262,8 @@
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="{{ route('shop') }}">Shop</a></li>
                                         @auth
-                                            <li><a href="{{ route('user.myaccount')}}">My Account<i class="fi-rs-angle-down"></i></a>
+                                            <li><a href="{{ route('user.myaccount') }}">My Account<i
+                                                        class="fi-rs-angle-down"></i></a>
                                                 @if (auth()->user()->utype == 'ADM')
                                                     <ul class="sub-menu">
                                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
@@ -561,7 +571,7 @@
                                     <div class="col-md-8 col-lg-12">
                                         <p class="wow fadeIn animated">From App Store or Google Play</p>
                                         <div class="download-app wow fadeIn animated mob-app">
-                                            <a href="#" class="hover-up mb-sm-4 mb-lg-0"><img 
+                                            <a href="#" class="hover-up mb-sm-4 mb-lg-0"><img
                                                     src="assets/imgs/theme/app-store.jpg" alt=""></a>
                                             <a href="#" class="hover-up"><img src="assets/imgs/theme/google-play.jpg"
                                                     alt=""></a>

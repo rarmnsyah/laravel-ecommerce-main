@@ -1,4 +1,14 @@
 <?php return array (
+  'azishapidin/indoregion' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'AzisHapidin\\IndoRegion\\IndoRegionServiceProvider',
+    ),
+    'aliases' => 
+    array (
+    ),
+  ),
   'hardevine/shoppingcart' => 
   array (
     'providers' => 
@@ -36,6 +46,17 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'laravolt/indonesia' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravolt\\Indonesia\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Indonesia' => 'Laravolt\\Indonesia\\Facade',
     ),
   ),
   'livewire/livewire' => 

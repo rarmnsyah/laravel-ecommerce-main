@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop.html">Music</a>
+                                            <a href="shop.html"> {{ $product->category->name }} </a>
                                         </div>
                                         <h2><a href="product-details.html">{{$product->name}}</a></h2>
                                         <div class="rating-result" title="90%">

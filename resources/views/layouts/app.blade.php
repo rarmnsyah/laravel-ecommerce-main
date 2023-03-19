@@ -253,7 +253,7 @@
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="{{ route('shop') }}">Shop</a></li>
                                         @auth
-                                            <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
+                                            <li><a href="{{ route('admin.myaccount')}}">My Account<i class="fi-rs-angle-down"></i></a>
                                                 @if (auth()->user()->utype == 'ADM')
                                                     <ul class="sub-menu">
                                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>

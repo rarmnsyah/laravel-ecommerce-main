@@ -10,7 +10,6 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\WishlistComponent;
-use App\Http\Livewire\User\UserDaftarComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
@@ -22,6 +21,7 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSlideComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSlideComponent;
+use App\Http\Livewire\ViewMyAccount;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +65,7 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
+    Route::get('/admin/myAccount', ViewMyAccount::class)->name('admin.myaccount');
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');

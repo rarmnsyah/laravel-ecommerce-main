@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop.html">Music</a>
+                                                <a href="shop.html">{{ $product->category->name }}</a>
                                             </div>
                                             <h2><a href="{{ route('product.details', ['slug'=>$product->slug])}}">{{$product->name}}</a></h2>
                                             <div class="rating-result" title="90%">

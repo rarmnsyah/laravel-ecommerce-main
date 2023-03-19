@@ -9,7 +9,11 @@ use App\Http\Controllers\Controller;
 class ChangeUserType extends Controller
 {
     public function index(){
-        return view('auth.update');
+        if (auth()->user()->utpe == 'USR'){
+            return view('auth.update');
+        } else {
+            return redirect('/');    
+        }
     }
 
     public function update(User $user){
@@ -17,6 +21,6 @@ class ChangeUserType extends Controller
 
         User::where('id', $user->id)->update($validatedData);
 
-        return redirect('/')->with('success', 'User has been Updated to Saler');
+        return redirect(route('admin.dashboard'))->with('success', 'User has been Updated to Saler');    
     }
 }

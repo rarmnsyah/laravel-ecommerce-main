@@ -266,7 +266,8 @@
                                                         class="fi-rs-angle-down"></i></a>
                                                 @if (auth()->user()->utype == 'ADM')
                                                     <ul class="sub-menu">
-                                                        <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                                        <li><a href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a></li>
+                                                        <li><a href="{{ route('user.show') }}">Toko Saya</a></li>
                                                         <li><a href="{{ route('admin.products') }}">Products</a></li>
                                                         <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                                         {{-- <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li> --}}

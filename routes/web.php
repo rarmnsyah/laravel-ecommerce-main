@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function(){
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    // Route::get('/admin/toko', AdminDashboardComponent::class)->name('admin.toko');
     Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');
     Route::get('/admin/category/edit/{category_id}', AdminEditCategoryComponent::class)->name('admin.category.edit');

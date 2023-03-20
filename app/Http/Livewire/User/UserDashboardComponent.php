@@ -6,6 +6,8 @@ use App\Models\User;
 use Livewire\Component;
 use Illuminate\Http\Request;
 use Livewire\WithFileUploads;
+use Carbon\Carbon;
+
 
 class UserDashboardComponent extends Component
 {
@@ -18,6 +20,7 @@ class UserDashboardComponent extends Component
     public $kabupaten;
     public $jenis_kelamin;
     public $nomor_telepon;
+    public $tanggal_lahir;
     public $alamat;
     public $newimage;
 
@@ -35,27 +38,33 @@ class UserDashboardComponent extends Component
         $this->provinsi = $user->provinsi;
         $this->kabupaten = $user->kabupaten;
         $this->jenis_kelamin = $user->jenis_kelamin;
+        $this->tanggal_lahir = $user->tanggal_lahir;
         $this->nomor_telepon = $user->nomor_telepon;
         $this->alamat = $user->alamat;
     }
 
     public function updateUser(){
+
         $this->validate([
             'name'=>'required',
-            'slug'=>'required'
+            'email'=>'required'
         ]);
-        $category = Category::find($this->category_id);
-        $category->name = $this->name;
-        $category->slug = $this->slug;
+        $user = user::find($this->user_id);
+        $user->name = $this->name;
+        $user->email = $this->email;
         if($this->newimage){
-            // unlink('assets/imgs/categories/'.$category->newimage);
+            // unlink('assets/imgs/categories/'.$user->newimage);
             $imageName = Carbon::now()->timestamp.'.'.$this->newimage->extension();
             $this->newimage->storeAs('categories',$imageName);
-            $category->image = $imageName;
+            $user->image = $imageName;
         }
-        $category->is_popular = $this->is_popular;
-        $category->save();
-        session()->flash('message', 'Category has been updated successfully!');
+        $user->tanggal_lahir = $this->tanggal_lahir;
+        $user->jenis_kelamin = $this->jenis_kelamin;
+        $user->provinsi = $this->provinsi;
+        $user->kabupaten = $this->kabupaten;
+        $user->alamat = $this->alamat;
+        $user->save();
+        session()->flash('message', 'Profil berhasil diperbarui!');
     }
 
     // public function anjay()

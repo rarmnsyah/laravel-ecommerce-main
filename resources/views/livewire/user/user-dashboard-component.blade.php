@@ -94,11 +94,14 @@
         </div>
         <div class="container-fluid">
             <div class="card mx-auto col-lg-8">
+                @if (Session::has('message'))
+                    <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                @endif
                 <div class="card-header pb-2 px-3">
                     <h6 class="mb-0">{{ __('Profile Information') }}</h6>
                 </div>
                 <div class="card-body pt-4 p-3">
-                    {{-- <form action="{{ route('user.dashboard.store'), ['user_id' => auth()->type()->id]}}" method="POST" role="form text-left"> --}}
+                    {{-- <form action="{{ route('dashboard.store'), ['user_id' => auth()->type()->id]}}" method="POST" role="form text-left"> --}}
                     <form wire:submit.prevent="updateUser">
                         @csrf
                         @if ($errors->any())
@@ -123,10 +126,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user-name" class="form-control-label">{{ __('Full Name') }}</label>
-                                    <div class="@error('user.name')border border-danger rounded-3 @enderror">
+                                    <label for="name" class="form-control-label">{{ __('Full Name') }}</label>
+                                    <div class="@error('name')border border-danger rounded-3 @enderror">
                                         <input class="form-control" value="{{ auth()->user()->name }}" type="text"
-                                            placeholder="Name" id="user-name" name="name">
+                                            placeholder="Name" id="name" wire:model="name" name="name">
                                         @error('name')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -135,10 +138,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user-email" class="form-control-label">{{ __('Email') }}</label>
+                                    <label for="email" class="form-control-label">{{ __('Email') }}</label>
                                     <div class="@error('email')border border-danger rounded-3 @enderror">
                                         <input class="form-control" value="{{ auth()->user()->email }}" type="email"
-                                            placeholder="@example.com" id="user-email" name="email">
+                                            placeholder="@example.com" id="email" wire:model="email" name="email">
                                         @error('email')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -149,11 +152,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user-jenis-kelamin"
+                                    <label for="jenis_kelamin"
                                         class="form-control-label">{{ __('Jenis Kelamin') }}</label>
-                                    <div class="@error('user.jenis_kelamin') border border-danger rounded-3 @enderror">
+                                    <div class="@error('jenis_kelamin') border border-danger rounded-3 @enderror">
                                         <input class="form-control" type="text" placeholder=""
-                                            id="user-jenis-kelamin" name="jenis_kelamin"
+                                            id="jenis_kelamin" wire:model="jenis_kelamin" name="jenis_kelamin"
                                             value="{{ auth()->user()->jenis_kelamin }}">
                                         @error('jenis_kelamin')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
@@ -163,13 +166,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user-tanggal-lahir"
+                                    <label for="tanggal_lahir"
                                         class="form-control-label">{{ __('Tanggal Lahir') }}</label>
-                                    <div class="@error('user.tanggal-lahir') border border-danger rounded-3 @enderror">
+                                    <div class="@error('tanggal_lahir') border border-danger rounded-3 @enderror">
                                         <input class="form-control" type="text" placeholder=""
-                                            id="user-tanggal-lahir" name="tanggal-lahir"
+                                            id="tanggal_lahir" wire:model="tanggal_lahir" name="tanggal_lahir"
                                             value="{{ auth()->user()->tanggal_lahir }}">
-                                        @error('tanggal-lahir')
+                                        @error('tanggal_lahir')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
                                     </div>
@@ -177,27 +180,29 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user-provinsi" class="form-control-label">{{ __('Provinsi') }}</label>
-                                    <div class="@error('user.provinsi') border border-danger rounded-3 @enderror">
-                                        <input class="form-control" type="text" 
-                                            id="user-provinsi" name="provinsi" value="{{ auth()->user()->provinsi }}">
+                                    <label for="provinsi" class="form-control-label">{{ __('Provinsi') }}</label>
+                                    <div class="@error('provinsi') border border-danger rounded-3 @enderror">
+                                        <input class="form-control" type="text" id="provinsi"
+                                            wire:model='provinsi' name="provinsi"
+                                            value="{{ auth()->user()->provinsi }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="user-kabupaten" class="form-control-label">{{ __('Kabupaten') }}</label>
-                                    <div class="@error('user.kabupaten') border border-danger rounded-3 @enderror">
-                                        <input class="form-control" type="text" 
-                                            id="user-kabupaten" name="kabupaten" value="{{ auth()->user()->kabupaten }}">
+                                    <label for="kabupaten" class="form-control-label">{{ __('Kabupaten') }}</label>
+                                    <div class="@error('kabupaten') border border-danger rounded-3 @enderror">
+                                        <input class="form-control" type="text" id="kabupaten"
+                                            wire:model="kabupaten" name="kabupaten"
+                                            value="{{ auth()->user()->kabupaten }}">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user-alamat">{{ 'Alamat' }}</label>
-                            <div class="@error('user.alamat')border border-danger rounded-3 @enderror">
-                                <textarea class="form-control" id="user-alamat" rows="3" name="alamat">{{ auth()->user()->alamat }}</textarea>
+                            <label for="alamat">{{ 'Alamat' }}</label>
+                            <div class="@error('alamat')border border-danger rounded-3 @enderror">
+                                <textarea class="form-control" id="alamat" wire:model="alamat" rows="3" name="alamat">{{ auth()->user()->alamat }}</textarea>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end">

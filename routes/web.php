@@ -59,7 +59,7 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard');
     // Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard.store');
     Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
     Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);

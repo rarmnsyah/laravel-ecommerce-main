@@ -17,6 +17,7 @@
   'details-component' => 'App\\Http\\Livewire\\DetailsComponent',
   'header-search-component' => 'App\\Http\\Livewire\\HeaderSearchComponent',
   'home-component' => 'App\\Http\\Livewire\\HomeComponent',
+  'proses-transaksi-component' => 'App\\Http\\Livewire\\ProsesTransaksiComponent',
   'search-component' => 'App\\Http\\Livewire\\SearchComponent',
   'shop-component' => 'App\\Http\\Livewire\\ShopComponent',
   'user.user-dashboard-component' => 'App\\Http\\Livewire\\User\\UserDashboardComponent',

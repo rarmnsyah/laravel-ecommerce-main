@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\Auth\ChangeUserType;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
+use App\Http\Livewire\ViewMyAccount;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\WishlistComponent;
+use App\Http\Controllers\Auth\ChangeUserType;
+use App\Http\Livewire\ProsesTransaksiComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
@@ -21,7 +23,6 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSlideComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSlideComponent;
-use App\Http\Livewire\ViewMyAccount;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,31 +45,29 @@ Route::get('/shop', ShopComponent::class)->name('shop');
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
-Route::get('/cart', CartComponent::class)->name('shop.cart');
-
-Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');
-
-Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
-
 Route::get('/product-category/{slug}', CategoryComponent::class)->name('product.category');
 
 Route::get('/search', SearchComponent::class)->name('product.search');
 
 // Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware(['auth'])->group(function(){
-    Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard');
-    // Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard.store');
-    Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
-    Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
-    Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
+    //     return view('dashboard');
+    // })->middleware(['auth', 'verified'])->name('dashboard');
+    
+    Route::middleware(['auth'])->group(function(){
+        Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard');
+        // Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard.store');
+        Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
+        Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
+        Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
+        Route::get('/cart', CartComponent::class)->name('shop.cart');
+        Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');
+        Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
+        // Route::get('/transaksi', ProsesTransaksiComponent::class)->name('shop.transaksi');
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
-    // Route::get('/admin/toko', AdminDashboardComponent::class)->name('admin.toko');
+    // Route::get('/admin/toko', AdminTokoComponent::class)->name('admin.toko');
     Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');
     Route::get('/admin/category/edit/{category_id}', AdminEditCategoryComponent::class)->name('admin.category.edit');

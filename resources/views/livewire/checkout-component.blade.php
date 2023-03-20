@@ -1,5 +1,5 @@
 <div>
-<main class="main">
+    <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -14,11 +14,15 @@
                 <div class="row">
                     <div class="col-lg-6 mb-sm-15">
                         <div class="toggle_info">
-                            <span><i class="fi-rs-user mr-10"></i><span class="text-muted">Already have an account?</span> <a href="#loginform" data-bs-toggle="collapse" class="collapsed" aria-expanded="false">Click here to login</a></span>
+                            <span><i class="fi-rs-user mr-10"></i><span class="text-muted">Already have an
+                                    account?</span> <a href="#loginform" data-bs-toggle="collapse" class="collapsed"
+                                    aria-expanded="false">Click here to login</a></span>
                         </div>
                         <div class="panel-collapse collapse login_form" id="loginform">
                             <div class="panel-body">
-                                <p class="mb-30 font-sm">If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing &amp; Shipping section.</p>
+                                <p class="mb-30 font-sm">If you have shopped with us before, please enter your details
+                                    below. If you are a new customer, please proceed to the Billing &amp; Shipping
+                                    section.</p>
                                 <form method="post">
                                     <div class="form-group">
                                         <input type="text" name="email" placeholder="Username Or Email">
@@ -29,8 +33,10 @@
                                     <div class="login_footer form-group">
                                         <div class="chek-form">
                                             <div class="custome-checkbox">
-                                                <input class="form-check-input" type="checkbox" name="checkbox" id="remember" value="">
-                                                <label class="form-check-label" for="remember"><span>Remember me</span></label>
+                                                <input class="form-check-input" type="checkbox" name="checkbox"
+                                                    id="remember" value="">
+                                                <label class="form-check-label" for="remember"><span>Remember
+                                                        me</span></label>
                                             </div>
                                         </div>
                                         <a href="#">Forgot password?</a>
@@ -44,7 +50,9 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="toggle_info">
-                            <span><i class="fi-rs-label mr-10"></i><span class="text-muted">Have a coupon?</span> <a href="#coupon" data-bs-toggle="collapse" class="collapsed" aria-expanded="false">Click here to enter your code</a></span>
+                            <span><i class="fi-rs-label mr-10"></i><span class="text-muted">Have a coupon?</span> <a
+                                    href="#coupon" data-bs-toggle="collapse" class="collapsed"
+                                    aria-expanded="false">Click here to enter your code</a></span>
                         </div>
                         <div class="panel-collapse collapse coupon_form " id="coupon">
                             <div class="panel-body">
@@ -65,6 +73,11 @@
                     <div class="col-12">
                         <div class="divider mt-50 mb-50"></div>
                     </div>
+                </div>
+                <div class="row">
+                    @if (Session::has('success'))
+                        <div class="alert alert-success" role="alert">Selamat, Pesanan Anda Berhasil Dipesan!</div>
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -336,7 +349,8 @@
                                 <input type="text" name="billing_address" required="" placeholder="Address *">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="billing_address2" required="" placeholder="Address line2">
+                                <input type="text" name="billing_address2" required=""
+                                    placeholder="Address line2">
                             </div>
                             <div class="form-group">
                                 <input required="" type="text" name="city" placeholder="City / Town *">
@@ -356,8 +370,12 @@
                             <div class="form-group">
                                 <div class="checkbox">
                                     <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="createaccount">
-                                        <label class="form-check-label label_info" data-bs-toggle="collapse" href="#collapsePassword" data-target="#collapsePassword" aria-controls="collapsePassword" for="createaccount"><span>Create an account?</span></label>
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                            id="createaccount">
+                                        <label class="form-check-label label_info" data-bs-toggle="collapse"
+                                            href="#collapsePassword" data-target="#collapsePassword"
+                                            aria-controls="collapsePassword" for="createaccount"><span>Create an
+                                                account?</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -368,20 +386,27 @@
                                 <div class="form-group">
                                     <div class="chek-form">
                                         <div class="custome-checkbox">
-                                            <input class="form-check-input" type="checkbox" name="checkbox" id="differentaddress">
-                                            <label class="form-check-label label_info" data-bs-toggle="collapse" data-target="#collapseAddress" href="#collapseAddress" aria-controls="collapseAddress" for="differentaddress"><span>Ship to a different address?</span></label>
+                                            <input class="form-check-input" type="checkbox" name="checkbox"
+                                                id="differentaddress">
+                                            <label class="form-check-label label_info" data-bs-toggle="collapse"
+                                                data-target="#collapseAddress" href="#collapseAddress"
+                                                aria-controls="collapseAddress" for="differentaddress"><span>Ship to a
+                                                    different address?</span></label>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="collapseAddress" class="different_address collapse in">
                                     <div class="form-group">
-                                        <input type="text" required="" name="fname" placeholder="First name *">
+                                        <input type="text" required="" name="fname"
+                                            placeholder="First name *">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" required="" name="lname" placeholder="Last name *">
+                                        <input type="text" required="" name="lname"
+                                            placeholder="Last name *">
                                     </div>
                                     <div class="form-group">
-                                        <input required="" type="text" name="cname" placeholder="Company Name">
+                                        <input required="" type="text" name="cname"
+                                            placeholder="Company Name">
                                     </div>
                                     <div class="form-group">
                                         <div class="custom_select">
@@ -635,19 +660,24 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="billing_address" required="" placeholder="Address *">
+                                        <input type="text" name="billing_address" required=""
+                                            placeholder="Address *">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="billing_address2" required="" placeholder="Address line2">
+                                        <input type="text" name="billing_address2" required=""
+                                            placeholder="Address line2">
                                     </div>
                                     <div class="form-group">
-                                        <input required="" type="text" name="city" placeholder="City / Town *">
+                                        <input required="" type="text" name="city"
+                                            placeholder="City / Town *">
                                     </div>
                                     <div class="form-group">
-                                        <input required="" type="text" name="state" placeholder="State / County *">
+                                        <input required="" type="text" name="state"
+                                            placeholder="State / County *">
                                     </div>
                                     <div class="form-group">
-                                        <input required="" type="text" name="zipcode" placeholder="Postcode / ZIP *">
+                                        <input required="" type="text" name="zipcode"
+                                            placeholder="Postcode / ZIP *">
                                     </div>
                                 </div>
                             </div>
@@ -673,30 +703,25 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/shop/product-1-1.jpg')}}" alt="#"></td>
-                                            <td>
-                                                <h5><a href="product-details.html">Yidarton Women Summer Blue</a></h5> <span class="product-qty">x 2</span>
-                                            </td>
-                                            <td>$180.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/shop/product-2-1.jpg')}}" alt="#"></td>
-                                            <td>
-                                                <h5><a href="product-details.html">LDB MOON Women Summe</a></h5> <span class="product-qty">x 1</span>
-                                            </td>
-                                            <td>$65.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="image product-thumbnail"><img src="{{ asset('assets/imgs/shop/product-3-1.jpg')}}" alt="#"></td>
-                                            <td><i class="ti-check-box font-small text-muted mr-10"></i>
-                                                <h5><a href="product-details.html">Women's Short Sleeve Loose</a></h5> <span class="product-qty">x 1</span>
-                                            </td>
-                                            <td>$35.00</td>
-                                        </tr>
+                                        @foreach (Cart::instance('cart')->content() as $cart)
+                                            <tr>
+                                                <td class="image product-thumbnail"><img
+                                                        src="{{ asset('assets/imgs/products') }}/{{ $cart->model->image }}"
+                                                        alt="#"></td>
+                                                <td>
+                                                    <h5><a href="product-details.html">{{ $cart->model->name }}</a>
+                                                    </h5> <span class="product-qty"> x{{ $cart->qty }}</span>
+                                                </td>
+                                                <td>{{ $cart->subtotal }}</td>
+                                            </tr>
+                                        @endforeach
                                         <tr>
                                             <th>SubTotal</th>
-                                            <td class="product-subtotal" colspan="2">$280.00</td>
+                                            <td class="product-subtotal" colspan="2">{{ Cart::subtotal() }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tax</th>
+                                            <td class="product-subtotal" colspan="2">{{ Cart::tax() }}</td>
                                         </tr>
                                         <tr>
                                             <th>Shipping</th>
@@ -704,7 +729,8 @@
                                         </tr>
                                         <tr>
                                             <th>Total</th>
-                                            <td colspan="2" class="product-subtotal"><span class="font-xl text-brand fw-900">$280.00</span></td>
+                                            <td colspan="2" class="product-subtotal"><span
+                                                    class="font-xl text-brand fw-900">{{ Cart::total() }}</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -716,20 +742,31 @@
                                 </div>
                                 <div class="payment_option">
                                     <div class="custome-radio">
-                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3">
-                                        <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse" data-target="#cashOnDelivery" aria-controls="cashOnDelivery">Cash On Delivery</label>                                        
+                                        <input class="form-check-input" required="" type="radio"
+                                            name="payment_option" id="exampleRadios3">
+                                        <label class="form-check-label" for="exampleRadios3"
+                                            data-bs-toggle="collapse" data-target="#cashOnDelivery"
+                                            aria-controls="cashOnDelivery">Cash On Delivery</label>
                                     </div>
                                     <div class="custome-radio">
-                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios4">
-                                        <label class="form-check-label" for="exampleRadios4" data-bs-toggle="collapse" data-target="#cardPayment" aria-controls="cardPayment">Card Payment</label>                                        
+                                        <input class="form-check-input" required="" type="radio"
+                                            name="payment_option" id="exampleRadios4">
+                                        <label class="form-check-label" for="exampleRadios4"
+                                            data-bs-toggle="collapse" data-target="#cardPayment"
+                                            aria-controls="cardPayment">Card Payment</label>
                                     </div>
                                     <div class="custome-radio">
-                                        <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios5">
-                                        <label class="form-check-label" for="exampleRadios5" data-bs-toggle="collapse" data-target="#paypal" aria-controls="paypal">Paypal</label>                                        
+                                        <input class="form-check-input" required="" type="radio"
+                                            name="payment_option" id="exampleRadios5">
+                                        <label class="form-check-label" for="exampleRadios5"
+                                            data-bs-toggle="collapse" data-target="#paypal"
+                                            aria-controls="paypal">Paypal</label>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-fill-out btn-block mt-30">Place Order</a>
+                            <form wire:submit.prevent="storeCheckout">
+                                <button type="submit" class="btn btn-fill-out btn-block mt-30">Place Order</button>
+                            </form>
                         </div>
                     </div>
                 </div>

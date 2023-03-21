@@ -8,6 +8,7 @@
   'admin.admin-edit-home-slide-component' => 'App\\Http\\Livewire\\Admin\\AdminEditHomeSlideComponent',
   'admin.admin-edit-product-component' => 'App\\Http\\Livewire\\Admin\\AdminEditProductComponent',
   'admin.admin-home-slider-component' => 'App\\Http\\Livewire\\Admin\\AdminHomeSliderComponent',
+  'admin.admin-notifikasi-component' => 'App\\Http\\Livewire\\Admin\\AdminNotifikasiComponent',
   'admin.admin-product-component' => 'App\\Http\\Livewire\\Admin\\AdminProductComponent',
   'admin.admin-toko-component' => 'App\\Http\\Livewire\\Admin\\AdminTokoComponent',
   'cart-component' => 'App\\Http\\Livewire\\CartComponent',

@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
             'utype' => 'ADM'
         ]);
         \App\Models\User::factory()->create([
-            'name' => 'User',
-            'email' => 'rarmnsyah@gmail.com',
+            'name' => 'User saya',
+            'email' => 'rarmnsyah787@gmail.com',
             'utype' => 'USR'
         ]);
         \App\Models\Category::factory(6)->create();

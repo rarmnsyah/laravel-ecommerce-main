@@ -76,7 +76,7 @@
                 </div>
                 <div class="row">
                     @if (Session::has('success'))
-                        <div class="alert alert-success" role="alert">Selamat, Pesanan Anda Berhasil Dipesan!</div>
+                        <div class="alert alert-success" role="alert">Selamat, Pesanan Anda Berhasil Diproses!</div>
                     @endif
                 </div>
                 <div class="row">

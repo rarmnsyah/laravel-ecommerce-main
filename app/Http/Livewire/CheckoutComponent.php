@@ -27,7 +27,7 @@ class CheckoutComponent extends Component
             $transaksi->id_penjual = $penjual->id;
             $transaksi->product_id = $cart->model->id;
             $transaksi->jumlah = $cart->qty;
-            $transaksi->harga_produk = $product->regular_price;
+            $transaksi->harga = $product->regular_price;
             $subtotal = $cart->subtotal;
             $tax = $cart->taxRate;
             $transaksi->tax = $tax;

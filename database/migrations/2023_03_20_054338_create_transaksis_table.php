@@ -22,10 +22,10 @@ return new class extends Migration
             $table->bigInteger('product_id')->unsigned()->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('jumlah');
-            $table->integer('harga_produk');
+            $table->integer('harga');
             $table->integer('harga_total');
             $table->integer('tax');
-            $table->enum('status', ['finished', 'unfinished'])->default('unfinished');
+            $table->string('status')->default('Sedang Dikemas');
             $table->timestamps();
         });
     }

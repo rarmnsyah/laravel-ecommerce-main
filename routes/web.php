@@ -23,6 +23,7 @@ use App\Http\Livewire\Admin\AdminEditProductComponent;
 use App\Http\Livewire\Admin\AdminAddHomeSlideComponent;
 use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSlideComponent;
+use App\Http\Livewire\Admin\AdminKonfirmasiPembelianComponent;
 use App\Http\Livewire\Admin\AdminNotifikasiComponent;
 
 /*
@@ -69,16 +70,17 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     // Route::get('/admin/toko', AdminTokoComponent::class)->name('admin.toko');
-    Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
-    Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');
-    Route::get('/admin/category/edit/{category_id}', AdminEditCategoryComponent::class)->name('admin.category.edit');
+    // Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
+    // Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');
+    // Route::get('/admin/category/edit/{category_id}', AdminEditCategoryComponent::class)->name('admin.category.edit');
     Route::get('/admin/products', AdminProductComponent::class)->name('admin.products');
     Route::get('/admin/product/add', AdminAddProductComponent::class)->name('admin.product.add');
     Route::get('/admin/product/edit/{product_id}', AdminEditProductComponent::class)->name('admin.product.edit');
     Route::get('admin/slider/', AdminHomeSliderComponent::class)->name('admin.home.slider');
     Route::get('admin/slider/add', AdminAddHomeSlideComponent::class)->name('admin.home.slide.add');
     Route::get('admin/slider/edit/{slide_id}', AdminEditHomeSlideComponent::class)->name('admin.home.slide.edit');
-    Route::get('admin/notifikasi', AdminNotifikasiComponent::class)->name('admin.notifikasi');
+    Route::get('admin/konfirmasi/{transaksi_id}', AdminKonfirmasiPembelianComponent::class)->name('admin.konfirmasi');
+    // Route::get('admin/notifikasi', AdminNotifikasiComponent::class)->name('admin.notifikasi');
 });
 
 require __DIR__.'/auth.php';

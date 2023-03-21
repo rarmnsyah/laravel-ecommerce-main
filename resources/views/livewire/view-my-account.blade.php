@@ -8,10 +8,10 @@
                 </div>
             </div>
         </div>
-        <section class="pt-150 pb-150">
+        <section class="pt-100 pb-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 m-auto">
+                    <div class="col-lg-12 m-auto">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="dashboard-menu">
@@ -83,6 +83,7 @@
                                                             <tr>
                                                                 <th>Order</th>
                                                                 <th>Date</th>
+                                                                <th>Product</th>
                                                                 <th>Status</th>
                                                                 <th>Total</th>
                                                                 <th>Actions</th>
@@ -91,11 +92,14 @@
                                                         <tbody>
                                                             @foreach ($transaksis as $transaksi)
                                                                 <tr>
-                                                                    <td>{{$transaksi->id}}</td>
-                                                                    <td>{{ $transaksi->created_at->format('Y-m-d')}}</td>
+                                                                    <td>{{ $transaksi->id }}</td>
+                                                                    <td>{{ $transaksi->created_at->format('Y-m-d') }}
+                                                                    </td>
+                                                                    <td>{{ $transaksi->product->name }}</td>
                                                                     <td>{{ $transaksi->status }}</td>
-                                                                    <td>${{ $transaksi->harga_total }} for {{ $transaksi->jumlah }} item</td>
-                                                                    <td><a href="#"
+                                                                    <td>${{ $transaksi->harga }} for
+                                                                        {{ $transaksi->jumlah }} items</td>
+                                                                    <td><a href="{{ route('admin.konfirmasi', ['transaksi_id' => $transaksi->id]) }}"
                                                                             class="btn-small d-block">View</a></td>
                                                                 </tr>
                                                             @endforeach
@@ -149,7 +153,8 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <address>000 Interstate<br> 00 Business Spur,<br> Sault Ste.
-                                                            <br>Marie, MI 00000</address>
+                                                            <br>Marie, MI 00000
+                                                        </address>
                                                         <p>New York</p>
                                                         <a href="#" class="btn-small">Edit</a>
                                                     </div>

@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'utype' => 'ADM'
         ]);
         \App\Models\User::factory()->create([
-            'name' => 'User saya',
+            'name' => 'User',
             'email' => 'rarmnsyah787@gmail.com',
             'utype' => 'USR'
         ]);

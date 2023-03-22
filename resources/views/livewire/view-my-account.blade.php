@@ -17,15 +17,15 @@
                                 <div class="dashboard-menu">
                                     <ul class="nav flex-column" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="dashboard-tab" data-bs-toggle="tab"
+                                            <a class="nav-link active" id="orders-tab" data-bs-toggle="tab" href="#orders"
+                                                role="tab" aria-controls="orders" aria-selected="false"><i
+                                                    class="fi-rs-shopping-bag mr-10"></i>Orders</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="dashboard-tab" data-bs-toggle="tab"
                                                 href="#dashboard" role="tab" aria-controls="dashboard"
                                                 aria-selected="false"><i
                                                     class="fi-rs-settings-sliders mr-10"></i>Dashboard</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="orders-tab" data-bs-toggle="tab" href="#orders"
-                                                role="tab" aria-controls="orders" aria-selected="false"><i
-                                                    class="fi-rs-shopping-bag mr-10"></i>Orders</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" id="track-orders-tab" data-bs-toggle="tab"
@@ -56,21 +56,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="tab-content dashboard-content">
-                                    <div class="tab-pane fade active show" id="dashboard" role="tabpanel"
-                                        aria-labelledby="dashboard-tab">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h5 class="mb-0">Hello Rosie! </h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>From your account dashboard. you can easily check &amp; view your <a
-                                                        href="#">recent orders</a>, manage your <a
-                                                        href="#">shipping and billing addresses</a> and <a
-                                                        href="#">edit your password and account details.</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="orders" role="tabpanel"
+                                    <div class="tab-pane fade active show" id="orders" role="tabpanel"
                                         aria-labelledby="orders-tab">
                                         <div class="card">
                                             <div class="card-header">
@@ -99,13 +85,40 @@
                                                                     <td>{{ $transaksi->status }}</td>
                                                                     <td>${{ $transaksi->harga }} for
                                                                         {{ $transaksi->jumlah }} items</td>
-                                                                    <td><a href="{{ route('admin.konfirmasi', ['transaksi_id' => $transaksi->id]) }}"
+                                                                    <td><a href="{{ route('admin.transaksi', ['transaksi_id' => $transaksi->id]) }}"
                                                                             class="btn-small d-block">View</a></td>
                                                                 </tr>
                                                             @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
+                                                <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
+                                                    {{ $transaksis->links() }}
+                                                    <!-- <nav aria-label="Page navigation example">
+                                                        <ul class="pagination justify-content-start">
+                                                            <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                                            <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">16</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#"><i class="fi-rs-angle-double-small-right"></i></a></li>
+                                                        </ul>
+                                                    </nav> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="dashboard" role="tabpanel"
+                                        aria-labelledby="dashboard-tab">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Hello Rosie! </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <p>From your account dashboard. you can easily check &amp; view your <a
+                                                        href="#">recent orders</a>, manage your <a
+                                                        href="#">shipping and billing addresses</a> and <a
+                                                        href="#">edit your password and account details.</a></p>
                                             </div>
                                         </div>
                                     </div>

@@ -29,7 +29,7 @@
                 </div>
                 <div class="shopping-cart-button">
                     <a href="{{ route('shop.cart')}}" class="outline">View cart</a>
-                    <a href="checkout.html">Checkout</a>
+                    <a href="{{ route('shop.checkout')}}">Checkout</a>
                 </div>
             </div>
         </div>

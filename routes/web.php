@@ -55,16 +55,16 @@ Route::get('/search', SearchComponent::class)->name('product.search');
     //     return view('dashboard');
     // })->middleware(['auth', 'verified'])->name('dashboard');
     
-    Route::middleware(['auth'])->group(function(){
-        Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard');
-        // Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard.store');
-        Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
-        Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
-        Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
-        Route::get('/cart', CartComponent::class)->name('shop.cart');
-        Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');
-        Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
-        // Route::get('/transaksi', ProsesTransaksiComponent::class)->name('shop.transaksi');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard');
+    // Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard.store');
+    Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
+    Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
+    Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
+    Route::get('/cart', CartComponent::class)->name('shop.cart');
+    Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');
+    Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
+    // Route::get('/transaksi', ProsesTransaksiComponent::class)->name('shop.transaksi');
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
@@ -79,7 +79,7 @@ Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('admin/slider/', AdminHomeSliderComponent::class)->name('admin.home.slider');
     Route::get('admin/slider/add', AdminAddHomeSlideComponent::class)->name('admin.home.slide.add');
     Route::get('admin/slider/edit/{slide_id}', AdminEditHomeSlideComponent::class)->name('admin.home.slide.edit');
-    Route::get('admin/konfirmasi/{transaksi_id}', AdminKonfirmasiPembelianComponent::class)->name('admin.konfirmasi');
+    Route::get('admin/transaksi/{transaksi_id}', AdminKonfirmasiPembelianComponent::class)->name('admin.transaksi');
     // Route::get('admin/notifikasi', AdminNotifikasiComponent::class)->name('admin.notifikasi');
 });
 

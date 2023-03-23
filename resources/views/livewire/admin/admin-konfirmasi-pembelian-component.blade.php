@@ -26,8 +26,13 @@
                                         <li class="list-group-item">Jenis Kelamin :
                                             {{ $transaksi->user->jenis_kelamin }}
                                         </li>
+                                        <li class="list-group-item"> Nomor Whatsapp :<a
+                                                href="https://wa.me/{{ $transaksi->user->phone_number }}">{{ $transaksi->user->phone_number }}</a>
+
+                                        </li>
                                         <li class="list-group-item">Alamat : {{ $transaksi->user->alamat }},
-                                            {{ $transaksi->user->regency->name }}, {{ $transaksi->user->province->name }}</li>
+                                            {{ $transaksi->user->regency->name }},
+                                            {{ $transaksi->user->province->name }}</li>
 
                                         <li class="list-group-item"></li>
                                     </ul>
@@ -65,7 +70,8 @@
                                 </form>
                             @else
                                 <form wire:submit.prevent="konfirmasiPenjualan">
-                                    <button type="submit" disabled class="btn btn-primary">Konfirmasi Pembelian</button>
+                                    <button type="submit" disabled class="btn btn-primary">Konfirmasi
+                                        Pembelian</button>
                                 </form>
                             @endif
                         </div>

@@ -26,6 +26,7 @@ class UserDashboardComponent extends Component
     public $tanggal_lahir;
     public $alamat;
     public $newimage;
+    public $phone_number;
 
     public function render()
     {
@@ -48,13 +49,16 @@ class UserDashboardComponent extends Component
         $this->tanggal_lahir = $user->tanggal_lahir;
         $this->nomor_telepon = $user->nomor_telepon;
         $this->alamat = $user->alamat;
+        $this->phone_number = $user->phone_number;
+    
     }
 
     public function updateUser(){
 
         $this->validate([
             'name'=>'required',
-            'email'=>'required'
+            'email'=>'required',
+            'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9'
         ]);
         $user = user::find($this->user_id);
         $user->name = $this->name;
@@ -71,6 +75,7 @@ class UserDashboardComponent extends Component
         $user->kabupaten = $this->kabupaten;
         $user->alamat = $this->alamat;
         $user->kode_pos = $this->kode_pos;
+        $user->phone_number = $this->phone_number;
         $user->save();
         session()->flash('message', 'Profil berhasil diperbarui!');
     }

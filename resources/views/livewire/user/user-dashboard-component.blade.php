@@ -113,13 +113,28 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="phone_number"
+                                        class="form-control-label">{{ __('Nomor Handphone (Whatsapp)') }}</label>
+                                    <div class="@error('phone_number')border border-danger rounded-3 @enderror">
+                                        <input class="form-control" value="{{ auth()->user()->phone_number }}"
+                                            type="text" placeholder="" id="phone_number"
+                                            wire:model="phone_number" name="phone_number">
+                                        @error('phone_number')
+                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
                                     <label for="provinsi" class="form-control-label">{{ __('Provinsi') }}</label>
                                     <div class="@error('provinsi') border border-danger rounded-3 @enderror">
                                         <select name="provinsi" class="form-control" id="provinsi"
                                             wire:model="provinsi">
                                             @foreach ($provinces as $province)
                                                 @if (old('provinsi', auth()->user()->provinsi) == $province->id)
-                                                    <option value="{{$province->id}}" selected>{{$province->name}}</option>
+                                                    <option value="{{ $province->id }}" selected>
+                                                        {{ $province->name }}</option>
                                                 @endif
                                                 <option value="{{ $province->id }}">{{ $province->name }}</option>
                                             @endforeach
@@ -135,7 +150,8 @@
                                             wire:model="kabupaten">
                                             @foreach ($regencys as $regency)
                                                 @if (old('kabupaten', auth()->user()->kabupaten) == $regency->id)
-                                                    <option value="{{$regency->id}}" selected>{{$regency->name}}</option>
+                                                    <option value="{{ $regency->id }}" selected>{{ $regency->name }}
+                                                    </option>
                                                 @endif
                                                 <option value="{{ $regency->id }}">{{ $regency->name }}</option>
                                             @endforeach

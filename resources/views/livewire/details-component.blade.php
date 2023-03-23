@@ -3,9 +3,10 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Fashion
-                    <span></span> Abstract Print Patchwork Dress
+                    <a href="{{ route('home.index')}}" rel="nofollow">Home</a>
+                    <span></span>
+                    <a href="{{ route('shop')}}" rel="nofollow">Shop</a>
+                    <span></span> Product
                 </div>
             </div>
         </div>
@@ -50,7 +51,7 @@
                                             </figure>
                                         </div>
                                         <!-- THUMBNAILS -->
-                                        <div class="slider-nav-thumbnails pl-15 pr-15">
+                                        {{-- <div class="slider-nav-thumbnails pl-15 pr-15">
                                             <div><img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}"
                                                     alt="product image"></div>
                                             <div><img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}"
@@ -65,7 +66,7 @@
                                                     alt="product image"></div>
                                             <div><img src="{{ asset('assets/imgs/shop/thumbnail-9.jpg') }}"
                                                     alt="product image"></div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <!-- End Gallery -->
                                     <div class="social-icons single-share">
@@ -120,7 +121,7 @@
                                                 <li><i class="fi-rs-credit-card mr-5"></i> Cash on Delivery available</li>
                                             </ul>
                                         </div> --}}
-                                        <div class="attr-detail attr-color mb-15">
+                                        {{-- <div class="attr-detail attr-color mb-15">
                                             <strong class="mr-10">Color</strong>
                                             <ul class="list-filter color-filter">
                                                 <li><a href="#" data-color="Red"><span
@@ -148,7 +149,7 @@
                                                 <li><a href="#">XL</a></li>
                                                 <li><a href="#">XXL</a></li>
                                             </ul>
-                                        </div>
+                                        </div> --}}
                                         <div class="bt-1 border-color-1 mt-30 mb-30"></div>
                                         <div class="detail-extralink">
                                             <div class="detail-qty border radius">
@@ -173,6 +174,9 @@
                                             <li>Availability:<span
                                                     class="in-stock text-success ml-5">{{ $product->quantity }} Items
                                                     In Stock</span></li>
+                                            <li>Phone Number:<span class="in-stock text-success ml-5"><a
+                                                        href="https://wa.me/{{ $product->user->phone_number }}"></a>{{ $product->user->phone_number }}</span>
+                                            </li>
                                         </ul>
                                     </div>
                                     <!-- Detail Info -->
@@ -540,7 +544,9 @@
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                             <ul class="categories">
                                 @foreach ($categories as $category)
-                                    <li><a href="{{ route('product.category', ['slug'=>$category->slug])}}">{{ $category->name }}</a></li>
+                                    <li><a
+                                            href="{{ route('product.category', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>

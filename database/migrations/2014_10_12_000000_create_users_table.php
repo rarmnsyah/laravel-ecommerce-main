@@ -27,6 +27,7 @@ return new class extends Migration
             $table->bigInteger('kabupaten')->unsigned()->nullable();
             $table->string('kode_pos')->nullable();
             $table->string('alamat')->nullable();     
+            $table->string('phone_number')->nullable();     
             $table->rememberToken();
             $table->timestamps();
         });

@@ -259,7 +259,7 @@
                                 <nav>
                                     <ul>
                                         <li><a href="/">Home </a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        {{-- <li><a href="about.html">About</a></li> --}}
                                         <li><a href="{{ route('shop') }}">Shop</a></li>
                                         @auth
                                             <li><a href="{{ route('user.myaccount') }}">My Account<i
@@ -292,7 +292,9 @@
                                 </div>
                             </div>
                             <div class="hotline d-none d-lg-block">
-                                <p><i class="fi-rs-smartphone"></i><span>YTTA Company</span> (+62) 838-3195-5014 </p>
+                                <p><i class="fi-rs-smartphone"></i><span>YTTA Company</span> <a
+                                        href="https://wa.me/{{ auth()->user()->phone_number }}">{{ auth()->user()->phone_number }}</a>
+                                </p>
                             </div>
                             <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%
                             </p>

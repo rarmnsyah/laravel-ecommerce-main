@@ -21,6 +21,6 @@ class Product extends Model
     }
 
     public function transaksi(){
-        return $this->hasMany(transaksi::class, 'user_id');
+        return $this->hasMany(transaksi::class);
     }
 }

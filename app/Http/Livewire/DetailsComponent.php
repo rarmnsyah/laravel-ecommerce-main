@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -32,6 +33,6 @@ class DetailsComponent extends Component
         $nproducts = Product::latest()->take(4)->get();
         // $cart = Cart::restore(auth()->user()->id);
         $cart = Cart::restore(1);
-        return view('livewire.details-component', ['product'=>$product,'rproducts'=>$rproducts,'nproducts'=>$nproducts, 'cart'=>$cart]);
+        return view('livewire.details-component', ['product'=>$product,'rproducts'=>$rproducts,'nproducts'=>$nproducts, 'cart'=>$cart, 'categories'=>Category::latest()->take(5)->get()]);
     }
 }

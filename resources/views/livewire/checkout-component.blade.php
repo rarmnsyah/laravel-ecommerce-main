@@ -77,6 +77,8 @@
                 <div class="row">
                     @if (Session::has('success'))
                         <div class="alert alert-success" role="alert">Selamat, Pesanan Anda Berhasil Diproses!</div>
+                    @elseif (Session::has('failed'))
+                        <div class="alert alert-danger" role="alert">{{ Session('failed') }}</div>
                     @endif
                 </div>
                 <div class="row">

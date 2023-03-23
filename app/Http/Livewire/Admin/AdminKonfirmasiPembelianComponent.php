@@ -16,9 +16,23 @@ class AdminKonfirmasiPembelianComponent extends Component
     public function render()
     {
         $transaksi = transaksi::find($this->transaksi_id);
-        // dd($transaksi);
+        // dd($transaksi->user);
         return view('livewire.admin.admin-konfirmasi-pembelian-component', [
             'transaksi' => $transaksi
         ]);
+    }
+
+    public function konfirmasiPembelian(){
+        $transaksi = transaksi::find($this->transaksi_id);
+        $product = $transaksi->product;
+        $transaksi->status = "Sedang Dikirim";
+        $product->quantity -= $transaksi->qty;
+        if ($product->quantity == 0){
+            $product->stock_status = 'outofstock';
+        }
+        $transaksi->save();
+        $product->save();
+
+        return redirect(route('user.myaccount'))->with('success', 'Anda telah melakukan konfirmasi penjualan !');
     }
 }

@@ -12,10 +12,10 @@ class transaksi extends Model
     use HasFactory;
 
     public function product(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class, 'product_id');
     }
 
     public function user(){
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class, 'id_pembeli');
 }
 }

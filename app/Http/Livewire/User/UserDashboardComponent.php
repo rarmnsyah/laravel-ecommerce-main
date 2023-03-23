@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Province;
+use App\Models\Regency;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Http\Request;
@@ -18,6 +20,7 @@ class UserDashboardComponent extends Component
     public $image;
     public $provinsi;
     public $kabupaten;
+    public $kode_pos;
     public $jenis_kelamin;
     public $nomor_telepon;
     public $tanggal_lahir;
@@ -26,7 +29,10 @@ class UserDashboardComponent extends Component
 
     public function render()
     {
-        return view('livewire.user.user-dashboard-component');
+        return view('livewire.user.user-dashboard-component', [
+            'provinces' => Province::all(),
+            'regencys' => Regency::all()
+        ]);
     }
 
     public function mount($user_id){
@@ -37,6 +43,7 @@ class UserDashboardComponent extends Component
         $this->image = $user->image;
         $this->provinsi = $user->provinsi;
         $this->kabupaten = $user->kabupaten;
+        $this->kode_pos = $user->kode_pos;
         $this->jenis_kelamin = $user->jenis_kelamin;
         $this->tanggal_lahir = $user->tanggal_lahir;
         $this->nomor_telepon = $user->nomor_telepon;
@@ -63,6 +70,7 @@ class UserDashboardComponent extends Component
         $user->provinsi = $this->provinsi;
         $user->kabupaten = $this->kabupaten;
         $user->alamat = $this->alamat;
+        $user->kode_pos = $this->kode_pos;
         $user->save();
         session()->flash('message', 'Profil berhasil diperbarui!');
     }

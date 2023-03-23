@@ -21,10 +21,11 @@ return new class extends Migration
             $table->string('password');
             $table->enum('utype', ['USR', 'ADM'])->default('USR')->comment('ADM for Admin and USR for nomarl admin');
             $table->date('tanggal_lahir')->nullable();
-            $table->enum('jenis_kelamin', ['L', 'P'])->nullable();
+            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan'])->nullable();
             $table->string('image')->nullable();
             $table->string('provinsi')->nullable();
             $table->string('kabupaten')->nullable();
+            $table->string('kode_pos')->nullable();
             $table->string('alamat')->nullable();     
             $table->rememberToken();
             $table->timestamps();

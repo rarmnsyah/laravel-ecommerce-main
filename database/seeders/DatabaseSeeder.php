@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com', 
-            'utype' => 'ADM' 
+            'email' => 'test@example.com',
+            'utype' => 'ADM'
         ]);
         \App\Models\User::factory()->create([
             'name' => 'User',
@@ -32,5 +32,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Category::factory(6)->create();
         \App\Models\Product::factory(16)->create();
         \App\Models\HomeSlider::factory(2)->create();
+
+        $this->call(IndoRegionProvinceSeeder::class);
+        $this->call(IndoRegionRegencySeeder::class);
     }
 }

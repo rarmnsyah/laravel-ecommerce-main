@@ -20,6 +20,8 @@
                                 <div class="alert alert-success">
                                     <strong>Succes | {{ Session::get('success_message') }}</strong>
                                 </div>
+                            @elseif (Session::has('failed'))
+                                <div class="alert alert-danger" role="alert">{{ Session('failed') }}</div>
                             @endif
                             @if (Cart::instance('cart')->count() > 0)
                                 <table class="table shopping-summery text-center clean">
@@ -41,13 +43,14 @@
                                                         alt="#"></td>
                                                 <td class="product-des product-name">
                                                     <h5 class="product-name"><a
-                                                            href="product-details.html">{{ $item->model->name }}</a>
+                                                            href="{{route('product.details', ['slug' => $item->model->slug])}}">{{ $item->model->name }}</a>
                                                     </h5>
                                                     <!-- <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.
                                                         </p> -->
                                                 </td>
                                                 <td class="price" data-title="Price">
-                                                    <span>${{ $item->model->regular_price }} </span></td>
+                                                    <span>${{ $item->model->regular_price }} </span>
+                                                </td>
                                                 <td class="text-center" data-title="Stock">
                                                     <div class="detail-qty border radius  m-auto">
                                                         <a href="#" class="qty-down"

@@ -17,9 +17,9 @@
                                 <div class="dashboard-menu">
                                     <ul class="nav flex-column" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="orders-tab" data-bs-toggle="tab" href="#orders"
-                                                role="tab" aria-controls="orders" aria-selected="false"><i
-                                                    class="fi-rs-shopping-bag mr-10"></i>Orders</a>
+                                            <a class="nav-link active" id="orders-tab" data-bs-toggle="tab"
+                                                href="#orders" role="tab" aria-controls="orders"
+                                                aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Orders</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" id="dashboard-tab" data-bs-toggle="tab"
@@ -58,6 +58,10 @@
                                 <div class="tab-content dashboard-content">
                                     <div class="tab-pane fade active show" id="orders" role="tabpanel"
                                         aria-labelledby="orders-tab">
+                                        @if (Session::has('success'))
+                                            <div class="alert alert-success" role="alert">
+                                                {{ Session::get('success') }}</div>
+                                        @endif
                                         <div class="card">
                                             <div class="card-header">
                                                 <h5 class="mb-0">Your Orders</h5>

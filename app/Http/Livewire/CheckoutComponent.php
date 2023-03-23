@@ -15,13 +15,23 @@ class CheckoutComponent extends Component
     //     $this->carts = $carts;
     // }
 
-    
-    public function storeCheckout(){
+
+    public function storeCheckout()
+    {
+        // dd(auth()->user()->alamat);
         $carts = Cart::instance('cart')->content();
-        foreach($carts as $cart){
+        if (auth()->user()->alamat === null or auth()->user()->kabupaten === null or auth()->user()->provinsi === null) {
+            return redirect(route('shop.checkout'))->with('failed', 'Maaf, Pesanan Anda Gagal Diproses Silahkan Lengkapi Profil Anda!');
+        } else if (!$carts) {
+            return redirect(route('shop.checkout'))->with('failed', 'Maaf, Pesanan Anda Gagal Diproses!');
+        } 
+        foreach ($carts as $cart) {
             $product = Product::find($cart->model->id);
             $penjual = User::find($product->user_id);
             // dd($penjual);
+            if ($product->quantity < $cart->qty){
+                return redirect(route('shop.cart'))->with('failed', 'Maaf, Pesanan Anda Gagal Diproses! Stok Tidak Cukup');
+            }
             $transaksi = new transaksi();
             $transaksi->id_pembeli = auth()->user()->id;
             $transaksi->id_penjual = $penjual->id;
@@ -31,11 +41,11 @@ class CheckoutComponent extends Component
             $subtotal = $cart->subtotal;
             $tax = $cart->taxRate;
             $transaksi->tax = $tax;
-            $transaksi->harga_total = $subtotal + ($subtotal * $tax/100);
+            $transaksi->harga_total = $subtotal + ($subtotal * $tax / 100);
             $transaksi->save();
-            $quantity = $product->quantity - $cart->qty;
-            $product->quantity = $quantity;
-            $product->save();
+            // $quantity = $product->quantity - $cart->qty;
+            // $product->quantity = $quantity;
+            // $product->save();
         }
         Cart::instance('cart')->destroy();
         $this->emitTo('cart-icon-component', 'refreshComponent');
@@ -46,6 +56,5 @@ class CheckoutComponent extends Component
     public function render()
     {
         return view('livewire.checkout-component');
-    }    
-
+    }
 }

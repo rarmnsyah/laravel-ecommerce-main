@@ -22,7 +22,7 @@ class AdminKonfirmasiPembelianComponent extends Component
         ]);
     }
 
-    public function konfirmasiPembelian(){
+    public function konfirmasiPenjualan(){
         $transaksi = transaksi::find($this->transaksi_id);
         $product = $transaksi->product;
         $transaksi->status = "Sedang Dikirim";
@@ -33,6 +33,6 @@ class AdminKonfirmasiPembelianComponent extends Component
         $transaksi->save();
         $product->save();
 
-        return redirect(route('user.myaccount'))->with('success', 'Anda telah melakukan konfirmasi penjualan !');
+        return redirect(route('admin.dashboard'))->with('success', 'Anda telah melakukan konfirmasi penjualan !');
     }
 }

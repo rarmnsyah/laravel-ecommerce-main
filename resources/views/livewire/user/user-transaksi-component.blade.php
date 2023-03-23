@@ -19,20 +19,6 @@
                             </div>
                             <div class="single-content">
                                 <div>
-                                    <h4>Detail Pembeli</h4>
-                                    <ul class="list-group list-group-flush  ">
-                                        <li class="list-group-item">Nama : {{ $transaksi->user->name }}</li>
-                                        <li class="list-group-item">Email : {{ $transaksi->user->email }}</li>
-                                        <li class="list-group-item">Jenis Kelamin :
-                                            {{ $transaksi->user->jenis_kelamin }}
-                                        </li>
-                                        <li class="list-group-item">Alamat : {{ $transaksi->user->alamat }}
-                                            {{ $transaksi->user->kabupaten }} {{ $transaksi->user->provinsi }}</li>
-
-                                        <li class="list-group-item"></li>
-                                    </ul>
-                                </div>
-                                <div>
                                     <h4>Detail Produk</h4>
                                     <ul class="list-group list-group-flush  ">
                                         <li class="list-group-item">Nama : {{ $transaksi->product->name }}</li>
@@ -59,13 +45,13 @@
                                 <p>If you have any questions about these Terms, please <a href="contact.html">contact
                                         us</a>.</p>
                             </div>
-                            @if ($transaksi->status == 'Sedang Dikemas')
-                                <form wire:submit.prevent="konfirmasiPenjualan">
-                                    <button type="submit" class="btn btn-primary">Konfirmasi Pembelian</button>
+                            @if ($transaksi->status == 'Sedang Dikirim')
+                                <form wire:submit.prevent="konfirmasiPembelian">
+                                    <button type="submit" class="btn btn-primary">Terima Barang</button>
                                 </form>
                             @else
-                                <form wire:submit.prevent="konfirmasiPenjualan">
-                                    <button type="submit" disabled class="btn btn-primary">Konfirmasi Pembelian</button>
+                                <form wire:submit.prevent="konfirmasiPembelian">
+                                    <button type="submit" disabled class="btn btn-primary">Terima Barang</button>
                                 </form>
                             @endif
                         </div>

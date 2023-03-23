@@ -22,6 +22,7 @@
   'search-component' => 'App\\Http\\Livewire\\SearchComponent',
   'shop-component' => 'App\\Http\\Livewire\\ShopComponent',
   'user.user-dashboard-component' => 'App\\Http\\Livewire\\User\\UserDashboardComponent',
+  'user.user-transaksi-component' => 'App\\Http\\Livewire\\User\\UserTransaksiComponent',
   'view-my-account' => 'App\\Http\\Livewire\\ViewMyAccount',
   'wish-list-icon-component' => 'App\\Http\\Livewire\\WishListIconComponent',
   'wishlist-component' => 'App\\Http\\Livewire\\WishlistComponent',

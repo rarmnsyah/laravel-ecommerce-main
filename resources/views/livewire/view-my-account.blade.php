@@ -89,7 +89,7 @@
                                                                     <td>{{ $transaksi->status }}</td>
                                                                     <td>${{ $transaksi->harga }} for
                                                                         {{ $transaksi->jumlah }} items</td>
-                                                                    <td><a href="{{ route('admin.transaksi', ['transaksi_id' => $transaksi->id]) }}"
+                                                                    <td><a href="{{ route('user.transaksi', ['transaksi_id' => $transaksi->id]) }}"
                                                                             class="btn-small d-block">View</a></td>
                                                                 </tr>
                                                             @endforeach

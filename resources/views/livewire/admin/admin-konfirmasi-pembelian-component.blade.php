@@ -26,8 +26,8 @@
                                         <li class="list-group-item">Jenis Kelamin :
                                             {{ $transaksi->user->jenis_kelamin }}
                                         </li>
-                                        <li class="list-group-item">Alamat : {{ $transaksi->user->alamat }}
-                                            {{ $transaksi->user->kabupaten }} {{ $transaksi->user->provinsi }}</li>
+                                        <li class="list-group-item">Alamat : {{ $transaksi->user->alamat }},
+                                            {{ $transaksi->user->regency->name }}, {{ $transaksi->user->province->name }}</li>
 
                                         <li class="list-group-item"></li>
                                     </ul>

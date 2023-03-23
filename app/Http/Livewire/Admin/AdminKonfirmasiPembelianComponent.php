@@ -16,6 +16,7 @@ class AdminKonfirmasiPembelianComponent extends Component
     public function render()
     {
         $transaksi = transaksi::find($this->transaksi_id);
+        // dd($transaksi->user->regency->name);
         // dd($transaksi->user);
         return view('livewire.admin.admin-konfirmasi-pembelian-component', [
             'transaksi' => $transaksi

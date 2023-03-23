@@ -49,4 +49,12 @@ class User extends Authenticatable
     public function transaksi(){
         return $this->hasMany(transaksi::class);
     }
+
+    public function province(){
+        return $this->belongsTo(Province::class, 'provinsi');
+    }
+
+    public function regency(){
+        return $this->belongsTo(Regency::class, 'kabupaten');
+    }
 }

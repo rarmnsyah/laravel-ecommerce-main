@@ -23,8 +23,8 @@ return new class extends Migration
             $table->date('tanggal_lahir')->nullable();
             $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan'])->nullable();
             $table->string('image')->nullable();
-            $table->string('provinsi')->nullable();
-            $table->string('kabupaten')->nullable();
+            $table->bigInteger('provinsi')->unsigned()->nullable();
+            $table->bigInteger('kabupaten')->unsigned()->nullable();
             $table->string('kode_pos')->nullable();
             $table->string('alamat')->nullable();     
             $table->rememberToken();

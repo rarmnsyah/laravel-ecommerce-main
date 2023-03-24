@@ -38,9 +38,6 @@ use App\Http\Livewire\User\UserTransaksiComponent;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', HomeComponent::class)->name('home.index');
 
@@ -51,10 +48,6 @@ Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/product-category/{slug}', CategoryComponent::class)->name('product.category');
 
 Route::get('/search', SearchComponent::class)->name('product.search');
-
-// Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->middleware(['auth', 'verified'])->name('dashboard');
     
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard');
@@ -71,10 +64,6 @@ Route::middleware(['auth'])->group(function(){
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
-    // Route::get('/admin/toko', AdminTokoComponent::class)->name('admin.toko');
-    // Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
-    // Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.category.add');
-    // Route::get('/admin/category/edit/{category_id}', AdminEditCategoryComponent::class)->name('admin.category.edit');
     Route::get('/admin/products', AdminProductComponent::class)->name('admin.products');
     Route::get('/admin/product/add', AdminAddProductComponent::class)->name('admin.product.add');
     Route::get('/admin/product/edit/{product_id}', AdminEditProductComponent::class)->name('admin.product.edit');

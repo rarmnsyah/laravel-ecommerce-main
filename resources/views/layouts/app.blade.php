@@ -293,7 +293,7 @@
                             </div>
                             <div class="hotline d-none d-lg-block">
                                 <p><i class="fi-rs-smartphone"></i><span>YTTA Company</span> <a
-                                        href="https://wa.me/{{ auth()->user()->phone_number }}">{{ auth()->user()->phone_number }}</a>
+                                        href="https://wa.me/083831955014"> (+62) 838-3195-5014</a>
                                 </p>
                             </div>
                             <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%

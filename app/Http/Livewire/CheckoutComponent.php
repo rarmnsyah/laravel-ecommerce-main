@@ -14,11 +14,11 @@ class CheckoutComponent extends Component
     // public function mount($carts){
     //     $this->carts = $carts;
     // }
-
+    public $information;
 
     public function storeCheckout()
     {
-        // dd(auth()->user()->alamat);
+        // dd($this->information);
         $carts = Cart::instance('cart')->content();
         if (auth()->user()->alamat === null or auth()->user()->kabupaten === null or auth()->user()->provinsi === null) {
             return redirect(route('shop.checkout'))->with('failed', 'Maaf, Pesanan Anda Gagal Diproses Silahkan Lengkapi Profil Anda!');
@@ -42,6 +42,7 @@ class CheckoutComponent extends Component
             $tax = $cart->taxRate;
             $transaksi->tax = $tax;
             $transaksi->harga_total = $subtotal + ($subtotal * $tax / 100);
+            $transaksi->informasi = $this->information;
             $transaksi->save();
             // $quantity = $product->quantity - $cart->qty;
             // $product->quantity = $quantity;
@@ -50,7 +51,7 @@ class CheckoutComponent extends Component
         Cart::instance('cart')->destroy();
         $this->emitTo('cart-icon-component', 'refreshComponent');
         // return redirect(route('shop.checkout'))->with('success', 'Selamat, Pesanan Anda Berhasil!');     
-        session()->flash('success', 'Selamat, Pesanan Anda Berhasil!');
+        session()->flash('success', 'Selamat, Pesanan Anda Berhasil Diproses!');
     }
 
     public function render()

@@ -8,13 +8,13 @@
                     @endif
                     <div class="col-auto">
                         <div class="avatar avatar-xl position-relative">
-                            <img src="{{ asset('assets/imgs/products/product-1.jpg') }}" alt="..."
-                                class="border-radius-lg shadow-sm" width="200">
-                            <a href="javascript:;"
-                                class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
-                                <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    title="Edit Image"></i>
-                            </a>
+                            @if (auth()->user()->image)
+                                <img src="{{ asset('assets/imgs/profile') }}/{{auth()->user()->image}}" alt="..."
+                                    class="border-radius-lg shadow-sm" width="200">
+                            @else
+                                <img src="{{ asset('assets/imgs/profile/download.png') }}" alt="..."
+                                    class="border-radius-lg shadow-sm" width="200">
+                            @endif
                         </div>
                     </div>
                     <div class="col-auto my-auto">
@@ -168,6 +168,16 @@
                                             value="{{ auth()->user()->kode_pos }}">
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="newimage" class="form-control-label">{{ __('Ganti Gambar') }}</label>
+                            <div class="@error('newimage') border border-danger rounded-3 @enderror">
+                                <input class="form-control" type="file" id="newimage" wire:model="newimage"
+                                    name="newimage" value="{{ auth()->user()->newimages }}">
+                                @if ($newimage)
+                                    <img src="{{ $newimage->temporaryUrl() }}" width="120" />
+                                @endif
                             </div>
                         </div>
                         <div class="form-group">

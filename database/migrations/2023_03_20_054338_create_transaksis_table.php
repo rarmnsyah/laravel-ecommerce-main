@@ -26,6 +26,8 @@ return new class extends Migration
             $table->integer('harga_total');
             $table->integer('tax');
             $table->string('status')->default('Sedang Dikemas');
+            $table->string('metode_pengiriman')->default('Cash On Delivery');
+            $table->string('informasi')->nullable();
             $table->timestamps();
         });
     }

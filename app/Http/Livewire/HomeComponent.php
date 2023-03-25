@@ -24,7 +24,7 @@ class HomeComponent extends Component
         $slides = HomeSlider::where('status',1)->get();
         $lproducts = Product::orderBy('created_at', 'DESC')->get()->take(8);
         $fproducts = Product::where('featured',1)->inRandomOrder()->get()->take(8);
-        $pcategories = Category::where('is_popular',1)->inRandomOrder()->get()->take(8);
+        $pcategories = Category::all();
         return view('livewire.home-component', ['slides'=>$slides, 'lproducts'=>$lproducts, 'fproducts'=>$fproducts, 'pcategories'=>$pcategories]);
     }
 }

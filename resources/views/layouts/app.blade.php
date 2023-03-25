@@ -101,165 +101,18 @@
                                 <div class="categori-dropdown-wrap categori-dropdown-active-large">
                                     <ul>
                                         <li class="has-children">
-                                            <a href="shop.html"><i class="surfsidemedia-font-dress"></i>Barang</a>
-                                            {{-- <div class="dropdown-menu">
-                                                <ul class="mega-menu d-lg-flex">
-                                                    <li class="mega-menu-col col-lg-7">
-                                                        <ul class="d-lg-flex">
-                                                            <li class="mega-menu-col col-lg-6">
-                                                                <ul>
-                                                                    <li><span class="submenu-title">Hot & Trending</span>
-                                                                    </li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Dresses</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Blouses & Shirts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Hoodies & Sweatshirts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Women's Sets</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Suits & Blazers</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Bodysuits</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Tanks & Camis</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Coats & Jackets</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="mega-menu-col col-lg-6">
-                                                                <ul>
-                                                                    <li><span class="submenu-title">Bottoms</span></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Leggings</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Skirts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Shorts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Jeans</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Pants & Capris</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Bikini Sets</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Cover-Ups</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Swimwear</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-menu-col col-lg-5">
-                                                        <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-2.jpg"
-                                                                alt="menu_banner1">
-                                                            <div class="banne_info">
-                                                                <h6>10% Off</h6>
-                                                                <h4>New Arrival</h4>
-                                                                <a href="#">Shop now</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-3.jpg"
-                                                                alt="menu_banner2">
-                                                            <div class="banne_info">
-                                                                <h6>15% Off</h6>
-                                                                <h4>Hot Deals</h4>
-                                                                <a href="#">Shop now</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
+                                            <a href="{{ route('product.category', ['slug' => 'barang']) }}"><i class="surfsidemedia-font-dress"></i>Barang</a>
                                         </li>
                                         <li class="has-children">
-                                            <a href="shop.html"><i class="surfsidemedia-font-tshirt"></i>Jasa</a>
-                                            {{-- <div class="dropdown-menu">
-                                                <ul class="mega-menu d-lg-flex">
-                                                    <li class="mega-menu-col col-lg-7">
-                                                        <ul class="d-lg-flex">
-                                                            <li class="mega-menu-col col-lg-6">
-                                                                <ul>
-                                                                    <li><span class="submenu-title">Jackets & Coats</span>
-                                                                    </li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Down Jackets</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Jackets</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Parkas</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Faux Leather Coats</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Trench</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Wool & Blends</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Vests & Waistcoats</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Leather Coats</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="mega-menu-col col-lg-6">
-                                                                <ul>
-                                                                    <li><span class="submenu-title">Suits & Blazers</span>
-                                                                    </li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Blazers</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Suit Jackets</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Suit Pants</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Suits</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Vests</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Tailor-made Suits</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Cover-Ups</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-menu-col col-lg-5">
-                                                        <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-4.jpg"
-                                                                alt="menu_banner1">
-                                                            <div class="banne_info">
-                                                                <h6>10% Off</h6>
-                                                                <h4>New Arrival</h4>
-                                                                <a href="#">Shop now</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
+                                            <a href="{{ route('product.category', ['slug' => 'jasa']) }}"><i class="surfsidemedia-font-dress"></i>Jasa</a>
                                         </li>
-                                        </li>
-                                        {{-- <li> --}}
-                                        {{-- <ul class="more_slide_open" style="display: none;">
-                                                <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Beauty,
-                                                        Health</a></li>
-                                                <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Bags and
-                                                        Shoes</a></li>
-                                                <li><a href="shop.html"><i class="surfsidemedia-font-diamond"></i>Consumer
-                                                        Electronics</a></li>
-                                                <li><a href="shop.html"><i class="surfsidemedia-font-home"></i>Automobiles
-                                                        & Motorcycles</a></li>
-                                            </ul> --}}
-                                        {{-- </li> --}}
                                     </ul>
-                                    <div class="more_categories">Show more...</div>
                                 </div>
                             </div>
                             <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                                 <nav>
                                     <ul>
                                         <li><a href="/">Home </a></li>
-                                        {{-- <li><a href="about.html">About</a></li> --}}
                                         <li><a href="{{ route('shop') }}">Shop</a></li>
                                         @auth
                                             <li><a href="{{ route('user.myaccount') }}">My Account<i
@@ -267,15 +120,10 @@
                                                 @if (auth()->user()->utype == 'ADM')
                                                     <ul class="sub-menu">
                                                         <li><a
-                                                                href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
+                                                                href="{{ route('user.dashboard') }}">Dashboard</a>
                                                         </li>
                                                         <li><a href="{{ route('admin.dashboard') }}">Toko Saya</a></li>
                                                         <li><a href="{{ route('admin.products') }}">Products</a></li>
-                                                        {{-- <li><a href="{{ route('admin.categories') }}">Categories</a></li> --}}
-                                                        {{-- <li><a href="{{ route('admin.home.slider') }}">Manage Slider</a></li> --}}
-                                                        {{-- <li><a href="#">Coupons</a></li>
-                                                        <li><a href="#">Orders</a></li>
-                                                        <li><a href="#">Customers</a></li> --}}
                                                     </ul>
                                                 @else
                                                     <ul class="sub-menu">

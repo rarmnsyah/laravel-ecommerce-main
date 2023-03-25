@@ -36,8 +36,8 @@ class UserDashboardComponent extends Component
         ]);
     }
 
-    public function mount($user_id){
-        $user = User::find($user_id);
+    public function updateUser(){
+        $user = auth()->user();
         $this->user_id = $user->id;
         $this->name = $user->name;
         $this->email = $user->email;
@@ -50,10 +50,8 @@ class UserDashboardComponent extends Component
         $this->nomor_telepon = $user->nomor_telepon;
         $this->alamat = $user->alamat;
         $this->phone_number = $user->phone_number;
-    
-    }
 
-    public function updateUser(){
+        // dd($this->gambar);
 
         $this->validate([
             'name'=>'required',
@@ -66,7 +64,7 @@ class UserDashboardComponent extends Component
         if($this->newimage){
             // unlink('assets/imgs/categories/'.$user->newimage);
             $imageName = Carbon::now()->timestamp.'.'.$this->newimage->extension();
-            $this->newimage->storeAs('categories',$imageName);
+            $this->newimage->storeAs('profile',$imageName);
             $user->image = $imageName;
         }
         $user->tanggal_lahir = $this->tanggal_lahir;

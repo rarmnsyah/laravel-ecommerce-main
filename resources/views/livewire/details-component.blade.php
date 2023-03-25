@@ -3,9 +3,9 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="{{ route('home.index')}}" rel="nofollow">Home</a>
+                    <a href="{{ route('home.index') }}" rel="nofollow">Home</a>
                     <span></span>
-                    <a href="{{ route('shop')}}" rel="nofollow">Shop</a>
+                    <a href="{{ route('shop') }}" rel="nofollow">Shop</a>
                     <span></span> Product
                 </div>
             </div>
@@ -114,42 +114,6 @@
                                         <div class="short-desc mb-30">
                                             <p>{{ $product->short_description }}</p>
                                         </div>
-                                        {{-- <div class="product_sort_info font-xs mb-30">
-                                            <ul>
-                                                <li class="mb-10"><i class="fi-rs-crown mr-5"></i> 1 Year AL Jazeera Brand Warranty</li>
-                                                <li class="mb-10"><i class="fi-rs-refresh mr-5"></i> 30 Day Return Policy</li>
-                                                <li><i class="fi-rs-credit-card mr-5"></i> Cash on Delivery available</li>
-                                            </ul>
-                                        </div> --}}
-                                        {{-- <div class="attr-detail attr-color mb-15">
-                                            <strong class="mr-10">Color</strong>
-                                            <ul class="list-filter color-filter">
-                                                <li><a href="#" data-color="Red"><span
-                                                            class="product-color-red"></span></a></li>
-                                                <li><a href="#" data-color="Yellow"><span
-                                                            class="product-color-yellow"></span></a></li>
-                                                <li class="active"><a href="#" data-color="White"><span
-                                                            class="product-color-white"></span></a></li>
-                                                <li><a href="#" data-color="Orange"><span
-                                                            class="product-color-orange"></span></a></li>
-                                                <li><a href="#" data-color="Cyan"><span
-                                                            class="product-color-cyan"></span></a></li>
-                                                <li><a href="#" data-color="Green"><span
-                                                            class="product-color-green"></span></a></li>
-                                                <li><a href="#" data-color="Purple"><span
-                                                            class="product-color-purple"></span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="attr-detail attr-size">
-                                            <strong class="mr-10">Size</strong>
-                                            <ul class="list-filter size-filter font-small">
-                                                <li><a href="#">S</a></li>
-                                                <li class="active"><a href="#">M</a></li>
-                                                <li><a href="#">L</a></li>
-                                                <li><a href="#">XL</a></li>
-                                                <li><a href="#">XXL</a></li>
-                                            </ul>
-                                        </div> --}}
                                         <div class="bt-1 border-color-1 mt-30 mb-30"></div>
                                         <div class="detail-extralink">
                                             <div class="detail-qty border radius">
@@ -164,8 +128,7 @@
                                                     wire:click.prevent="store({{ auth()->user()->id }}, {{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
                                                     to cart</button>
                                                 <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="{{ route('shop.wishlist') }}"><i
-                                                        class="fi-rs-heart"></i></a>
+                                                    href="{{ route('shop.wishlist') }}"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn hover-up"
                                                     href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                             </div>
@@ -175,7 +138,7 @@
                                                     class="in-stock text-success ml-5">{{ $product->quantity }} Items
                                                     In Stock</span></li>
                                             <li>Phone Number:<span class="in-stock text-success ml-5"><a
-                                                        href="https://wa.me/{{ $product->user->phone_number }}"></a>{{ $product->user->phone_number }}</span>
+                                                        href="https://wa.me/{{ $product->user->phone_number }}">{{ $product->user->phone_number }}</a></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -569,23 +532,6 @@
                             </div>
                             <div class="list-group">
                                 <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900">Color</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox1" value="">
-                                        <label class="form-check-label" for="exampleCheckbox1"><span>Red
-                                                (56)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox2" value="">
-                                        <label class="form-check-label" for="exampleCheckbox2"><span>Green
-                                                (78)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox3" value="">
-                                        <label class="form-check-label" for="exampleCheckbox3"><span>Blue
-                                                (54)</span></label>
-                                    </div>
                                     <label class="fw-900 mt-15">Item Condition</label>
                                     <div class="custome-checkbox">
                                         <input class="form-check-input" type="checkbox" name="checkbox"

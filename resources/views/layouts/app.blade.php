@@ -432,11 +432,6 @@
                                                     alt=""></a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-12 mt-md-3 mt-lg-0">
-                                        <p class="mb-20 wow fadeIn animated">Secured Payment Gateways</p>
-                                        <img class="wow fadeIn animated" src="assets/imgs/theme/payment-method.png"
-                                            alt="">
-                                    </div>
                                 </div>
                             </div>
                         </div>

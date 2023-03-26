@@ -61,6 +61,9 @@
                                         @if (Session::has('success'))
                                             <div class="alert alert-success" role="alert">
                                                 {{ Session::get('success') }}</div>
+                                        @elseif (Session::has('failed'))
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ Session::get('failed') }}</div>
                                         @endif
                                         <div class="card">
                                             <div class="card-header">

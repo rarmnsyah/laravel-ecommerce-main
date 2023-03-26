@@ -1,10 +1,7 @@
 <?php return array (
-  'admin.admin-add-category-component' => 'App\\Http\\Livewire\\Admin\\AdminAddCategoryComponent',
   'admin.admin-add-home-slide-component' => 'App\\Http\\Livewire\\Admin\\AdminAddHomeSlideComponent',
   'admin.admin-add-product-component' => 'App\\Http\\Livewire\\Admin\\AdminAddProductComponent',
-  'admin.admin-categories-component' => 'App\\Http\\Livewire\\Admin\\AdminCategoriesComponent',
   'admin.admin-dashboard-component' => 'App\\Http\\Livewire\\Admin\\AdminDashboardComponent',
-  'admin.admin-edit-category-component' => 'App\\Http\\Livewire\\Admin\\AdminEditCategoryComponent',
   'admin.admin-edit-home-slide-component' => 'App\\Http\\Livewire\\Admin\\AdminEditHomeSlideComponent',
   'admin.admin-edit-product-component' => 'App\\Http\\Livewire\\Admin\\AdminEditProductComponent',
   'admin.admin-home-slider-component' => 'App\\Http\\Livewire\\Admin\\AdminHomeSliderComponent',
@@ -17,6 +14,7 @@
   'category-component' => 'App\\Http\\Livewire\\CategoryComponent',
   'checkout-component' => 'App\\Http\\Livewire\\CheckoutComponent',
   'details-component' => 'App\\Http\\Livewire\\DetailsComponent',
+  'f-a-q-component' => 'App\\Http\\Livewire\\FAQComponent',
   'header-search-component' => 'App\\Http\\Livewire\\HeaderSearchComponent',
   'home-component' => 'App\\Http\\Livewire\\HomeComponent',
   'search-component' => 'App\\Http\\Livewire\\SearchComponent',

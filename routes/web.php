@@ -25,6 +25,7 @@ use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditHomeSlideComponent;
 use App\Http\Livewire\Admin\AdminKonfirmasiPembelianComponent;
 use App\Http\Livewire\Admin\AdminNotifikasiComponent;
+use App\Http\Livewire\FAQComponent;
 use App\Http\Livewire\User\UserTransaksiComponent;
 
 /*
@@ -48,10 +49,11 @@ Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/product-category/{slug}', CategoryComponent::class)->name('product.category');
 
 Route::get('/search', SearchComponent::class)->name('product.search');
-    
+
+Route::get('/faq', FAQComponent::class)->name('faq');
+
 Route::middleware(['auth'])->group(function(){
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
-    // Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard.store');
     Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
     Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
     Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
@@ -59,7 +61,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');
     Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
     Route::get('/user/transaksi/{transaksi_id}', UserTransaksiComponent::class)->name('user.transaksi');
-    // Route::get('/transaksi', ProsesTransaksiComponent::class)->name('shop.transaksi');
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){

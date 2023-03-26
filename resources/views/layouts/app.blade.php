@@ -101,10 +101,12 @@
                                 <div class="categori-dropdown-wrap categori-dropdown-active-large">
                                     <ul>
                                         <li class="has-children">
-                                            <a href="{{ route('product.category', ['slug' => 'barang']) }}"><i class="surfsidemedia-font-dress"></i>Barang</a>
+                                            <a href="{{ route('product.category', ['slug' => 'barang']) }}"><i
+                                                    class="surfsidemedia-font-dress"></i>Barang</a>
                                         </li>
                                         <li class="has-children">
-                                            <a href="{{ route('product.category', ['slug' => 'jasa']) }}"><i class="surfsidemedia-font-dress"></i>Jasa</a>
+                                            <a href="{{ route('product.category', ['slug' => 'jasa']) }}"><i
+                                                    class="surfsidemedia-font-dress"></i>Jasa</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -119,8 +121,7 @@
                                                         class="fi-rs-angle-down"></i></a>
                                                 @if (auth()->user()->utype == 'ADM')
                                                     <ul class="sub-menu">
-                                                        <li><a
-                                                                href="{{ route('user.dashboard') }}">Dashboard</a>
+                                                        <li><a href="{{ route('user.dashboard') }}">Dashboard</a>
                                                         </li>
                                                         <li><a href="{{ route('admin.dashboard') }}">Toko Saya</a></li>
                                                         <li><a href="{{ route('admin.products') }}">Products</a></li>
@@ -135,6 +136,7 @@
                                                 @endif
                                             </li>
                                             @endif
+                                            <li><a href="{{ route('faq') }}">FAQ</a></li>
                                         </ul>
                                     </nav>
                                 </div>

@@ -150,7 +150,7 @@
                                                 @else
                                                     <a aria-label="Add To Wishlist" class="action-btn hover-up"
                                                         href="#"
-                                                        wire:click.prevent="addToWishList({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
+                                                        wire:click.prevent="addToWishList({{auth()->user()->id}}, {{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
                                                             class="fi-rs-heart"></i></a>
                                                 @endif
                                                 <a aria-label="Add To Cart" class="action-btn hover-up" href="#"

@@ -16,8 +16,12 @@ class WishlistComponent extends Component
         }
     }
 
+    public function restoreCart($identifier){ Cart::restore($identifier); }
+
     public function render()
     {
+        // $cart = Cart::instance('wishlist')->restore(auth()->user()->id);
+        // dd($this->restoreCart(auth()->user()->id));
         return view('livewire.wishlist-component');
     }
 }

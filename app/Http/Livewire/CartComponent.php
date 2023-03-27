@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Http\Request;
+
 
 class CartComponent extends Component
 {
@@ -36,8 +38,9 @@ class CartComponent extends Component
         $this->emitTo('cart-icon-component', 'refreshComponent');
     }
 
-    public function render()
+    public function render(Request $request)
     {
+        // dd($request->session()->get('cart')['wishlist']);
         return view('livewire.cart-component');
     }
 }

@@ -121,7 +121,8 @@
                                                         class="fi-rs-angle-down"></i></a>
                                                 @if (auth()->user()->utype == 'ADM')
                                                     <ul class="sub-menu">
-                                                        <li><a href="{{ route('user.dashboard') }}">Dashboard</a>
+                                                        <li><a
+                                                                href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
                                                         </li>
                                                         <li><a href="{{ route('admin.dashboard') }}">Toko Saya</a></li>
                                                         <li><a href="{{ route('admin.products') }}">Products</a></li>

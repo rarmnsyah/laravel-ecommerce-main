@@ -29,7 +29,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'rarmnsyah787@gmail.com',
             'utype' => 'USR'
         ]);
-        \App\Models\Category::factory(6)->create();
+        \App\Models\Category::factory()->create([
+            'name' => 'Product',
+            'slug' => 'product',
+        ]);
+        \App\Models\Category::factory()->create([
+            'name' => 'Barang',
+            'slug' => 'barang',
+        ]);
         \App\Models\Product::factory(16)->create();
         \App\Models\HomeSlider::factory(2)->create();
 

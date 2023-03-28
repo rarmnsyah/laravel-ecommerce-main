@@ -53,9 +53,9 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 Route::get('/faq', FAQComponent::class)->name('faq');
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/dashboard/{user_id}', UserDashboardComponent::class)->name('user.dashboard');
     Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
-    Route::post('/user/edit/{use r:id}',[ChangeUserType::class, 'update']);
+    Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
     Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
     Route::get('/cart', CartComponent::class)->name('shop.cart');
     Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');

@@ -9,7 +9,7 @@ use Livewire\Component;
 use Illuminate\Http\Request;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\Auth;
 
 class UserDashboardComponent extends Component
 {
@@ -35,9 +35,9 @@ class UserDashboardComponent extends Component
             'regencys' => Regency::all()
         ]);
     }
-
-    public function updateUser(){
-        $user = auth()->user();
+    
+    public function mount($user_id){
+        $user = User::find($user_id);
         $this->user_id = $user->id;
         $this->name = $user->name;
         $this->email = $user->email;
@@ -50,13 +50,16 @@ class UserDashboardComponent extends Component
         $this->nomor_telepon = $user->nomor_telepon;
         $this->alamat = $user->alamat;
         $this->phone_number = $user->phone_number;
+    }
+
+    public function updateUser(){
+        
 
         // dd($this->gambar);
 
         $this->validate([
             'name'=>'required',
             'email'=>'required',
-            'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9'
         ]);
         $user = user::find($this->user_id);
         $user->name = $this->name;

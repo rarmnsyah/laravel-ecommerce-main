@@ -18,6 +18,7 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $featured_product = [True, False];
         $product_name = $this->faker->unique()->words($nb=6, $asText = true);
         $slug = Str::slug($product_name, '-');
         return [
@@ -26,6 +27,7 @@ class ProductFactory extends Factory
             'short_description' => $this->faker->text(200),
             'description' => $this->faker->text(500),
             'regular_price' => $this->faker->numberBetween(10,500),
+            'featured' => $this->faker->numberBetween(0,1),
             'stock_status' => 'instock',
             'quantity' => $this->faker->numberBetween(10,50),
             'image' => 'product-'.$this->faker->numberBetween(1,16).'.jpg',

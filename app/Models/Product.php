@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\comment;
 use App\Models\Category;
 use App\Models\transaksi;
 use Illuminate\Database\Eloquent\Model;
@@ -22,5 +23,9 @@ class Product extends Model
 
     public function transaksi(){
         return $this->hasMany(transaksi::class);
+    }
+
+    public function comment(){
+        return $this->hasMany(comment::class);
     }
 }

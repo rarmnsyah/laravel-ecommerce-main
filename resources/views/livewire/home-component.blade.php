@@ -69,7 +69,7 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop.html">Clothing</a>
+                                                <a href="{{ route('product.category', ['slug'=>$fproduct->category->slug])}}"> {{ $fproduct->category->name }}</a>
                                             </div>
                                             <h2><a href="{{ route('product.details', ['slug'=>$fproduct->slug])}}">{{$fproduct->name}}</a></h2>
                                             <div class="rating-result" title="90%">

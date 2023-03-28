@@ -110,7 +110,7 @@
                                         <h2 class="title-detail">{{ $product->name }}</h2>
                                         <div class="product-detail-rating">
                                             <div class="pro-details-brand">
-                                                <span> Brands: <a href="shop.html">Bootstrap</a></span>
+                                                <span> Owner: {{ $product->user->name }}</span>
                                             </div>
                                             <div class="product-rate-cover text-end">
                                                 <div class="product-rate d-inline-block">
@@ -161,8 +161,6 @@
                                                         wire:click.prevent="addToWishList({{ auth()->user()->id }}, {{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
                                                             class="fi-rs-heart"></i></a>
                                                 @endif
-                                                <a aria-label="Compare" class="action-btn hover-up"
-                                                    href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                         </div>
                                         <ul class="product-meta font-xs color-grey mt-50">
@@ -170,7 +168,7 @@
                                                     class="in-stock text-success ml-5">{{ $product->quantity }} Items
                                                     In Stock</span></li>
                                             <li>Phone Number:<span class="in-stock text-success ml-5"><a
-                                                        href="https://wa.me/{{ $product->user->phone_number }}">{{ $product->user->phone_number }}</a></span>
+                                                        href="https://wa.me/{{ $product->user->phone_number }}">{{ $product->user->phone_number }}</a> ({{ $product->user->name }})</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -504,9 +502,6 @@
                                                             <a aria-label="Add To Wishlist"
                                                                 class="action-btn small hover-up" href="wishlist.php"
                                                                 tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                            <a aria-label="Compare" class="action-btn small hover-up"
-                                                                href="compare.php" tabindex="0"><i
-                                                                    class="fi-rs-shuffle"></i></a>
                                                         </div>
                                                         <div
                                                             class="product-badges product-badges-position product-badges-mrg">

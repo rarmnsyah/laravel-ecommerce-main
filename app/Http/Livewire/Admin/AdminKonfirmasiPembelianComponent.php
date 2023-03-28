@@ -34,6 +34,6 @@ class AdminKonfirmasiPembelianComponent extends Component
         $transaksi->save();
         $product->save();
 
-        return redirect(route('admin.dashboard'))->with('success', 'Anda telah melakukan konfirmasi penjualan !');
+        return redirect(route('admin.dashboard', ['transaksi_id'=>$transaksi->id]))->with('success', 'Anda telah melakukan konfirmasi penjualan !');
     }
 }

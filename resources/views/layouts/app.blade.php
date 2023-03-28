@@ -117,25 +117,29 @@
                                         <li><a href="/">Home </a></li>
                                         <li><a href="{{ route('shop') }}">Shop</a></li>
                                         @auth
-                                            <li><a href="{{ route('user.myaccount') }}">My Account<i
-                                                        class="fi-rs-angle-down"></i></a>
-                                                @if (auth()->user()->utype == 'ADM')
+                                            @if (auth()->user()->utype == 'ADM')
+                                                <li><a href="{{ route('user.myaccount') }}">My Account<i
+                                                            class="fi-rs-angle-down"></i></a>
                                                     <ul class="sub-menu">
+                                                        <li><a href="{{ route('user.myaccount') }}">Account</a></li>
                                                         <li><a
-                                                                href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
+                                                            href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
                                                         </li>
-                                                        <li><a href="{{ route('admin.dashboard') }}">Toko Saya</a></li>
                                                         <li><a href="{{ route('admin.products') }}">Products</a></li>
                                                     </ul>
+                                                </li>
+                                                <li><a href="{{ route('admin.dashboard') }}">Toko Saya</a></li>
                                                 @else
+                                                <li><a href="{{ route('user.myaccount') }}">My Account<i
+                                                    class="fi-rs-angle-down"></i></a>
                                                     <ul class="sub-menu">
+                                                        <li><a href="{{ route('user.myaccount') }}">Account</a></li>
                                                         <li><a
                                                                 href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
                                                         </li>
-                                                        <li><a href="{{ route('user.show') }}">Toko Saya</a></li>
                                                     </ul>
-                                                @endif
-                                            </li>
+                                                <li><a href="{{ route('user.show') }}">Toko Saya</a></li>
+                                            @endif
                                             @endif
                                             <li><a href="{{ route('faq') }}">FAQ</a></li>
                                         </ul>

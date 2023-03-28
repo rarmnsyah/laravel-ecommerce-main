@@ -136,7 +136,7 @@
                                                     <option value="{{ $province->id }}" selected>
                                                         {{ $province->name }}</option>
                                                 @endif
-                                                <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                                <option selected value ="{{ $province->id }}">{{ $province->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -153,7 +153,7 @@
                                                     <option value="{{ $regency->id }}" selected>{{ $regency->name }}
                                                     </option>
                                                 @endif
-                                                <option value="{{ $regency->id }}">{{ $regency->name }}</option>
+                                                <option selected value ="{{ $regency->id }}">{{ $regency->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>

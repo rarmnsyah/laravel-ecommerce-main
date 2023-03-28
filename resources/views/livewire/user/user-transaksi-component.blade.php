@@ -47,7 +47,7 @@
                             </div>
                             @if ($transaksi->status == 'Sedang Dikirim')
                                 <form wire:submit.prevent="konfirmasiPembelian">
-                                    <button type="submit" class="btn btn-primary">Terima Barang</button>
+                                    <button type="submit" class="btn btn-primary"> Terima Barang</button>
                                 </form>
                             @else
                                 <form wire:submit.prevent="konfirmasiPembelian">
@@ -56,7 +56,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-lg-3 primary-sidebar sticky-sidebar">
+                    {{-- <div class="col-lg-3 primary-sidebar sticky-sidebar">
                         <div class="widget-area">
                             <div class="sidebar-widget widget_search mb-50">
                                 <div class="search-form">
@@ -185,7 +185,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 
             </div>

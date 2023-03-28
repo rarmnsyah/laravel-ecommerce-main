@@ -26,6 +26,7 @@ use App\Http\Livewire\Admin\AdminEditHomeSlideComponent;
 use App\Http\Livewire\Admin\AdminKonfirmasiPembelianComponent;
 use App\Http\Livewire\Admin\AdminNotifikasiComponent;
 use App\Http\Livewire\FAQComponent;
+use App\Http\Livewire\User\UserMakeCommentsComponent;
 use App\Http\Livewire\User\UserTransaksiComponent;
 
 /*
@@ -61,6 +62,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');
     Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
     Route::get('/user/transaksi/{transaksi_id}', UserTransaksiComponent::class)->name('user.transaksi');
+    Route::get('/user/comment/{transaksi_id}', UserMakeCommentsComponent::class)->name('user.comment');
 });
 
 Route::middleware(['auth', 'authadmin'])->group(function(){

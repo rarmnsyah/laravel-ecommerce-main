@@ -27,7 +27,7 @@ class UserTransaksiComponent extends Component
         $transaksi->status = "Pesanan Diterima";
         $transaksi->save();
 
-        return redirect(route('user.myaccount'))->with('success', 'Selamat, Transaksi Anda Selesai !');
+        return redirect(route('user.comment'))->with('success', 'Selamat, Transaksi Anda Selesai !');
     }
 
 }

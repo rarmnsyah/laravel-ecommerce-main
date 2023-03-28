@@ -16,6 +16,22 @@ class DetailsComponent extends Component
         $this->slug = $slug;
     }
 
+    public function addToWishList($user_id ,$product_id, $product_name, $product_price){
+        Cart::instance('wishlist')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+        // Cart::instance('wishlist')->store($user_id, $product_id,$product_name,1,$product_price);
+        $this->emitTo('wish-list-icon-component', 'refreshComponent');
+    }
+
+    public function removeFromWishList($product_id){
+        foreach(Cart::instance('wishlist')->content() as $witem){
+            if($witem->id==$product_id){
+                Cart::instance('wishlist')->remove($witem->rowId);
+                $this->emitTo('wish-list-icon-component', 'refreshComponent');
+                return;
+            }
+        }
+    }
+
     public function store($user_id, $product_id, $product_name, $product_price){
         // Cart::add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
         // Cart::instance($user_id)->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');

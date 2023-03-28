@@ -32,7 +32,9 @@
                                         </li>
                                         <li class="list-group-item">Alamat : {{ $transaksi->user->alamat }},
                                             {{ $transaksi->user->regency->name }},
-                                            {{ $transaksi->user->province->name }}</li>
+                                            {{ $transaksi->user->province->name }}, 
+                                            {{ $transaksi->user->kode_pos }}
+                                        </li>
 
                                         <li class="list-group-item"></li>
                                     </ul>
@@ -58,6 +60,7 @@
                                         <li class="list-group-item">Harga Total : $ {{ $transaksi->harga_total }}</li>
                                         <li class="list-group-item">Metode Pembayaran : COD </li>
                                         <li class="list-group-item">Metode Pengiriman : COD </li>
+                                        <li class="list-group-item">Informasi Tambahan : {{ $transaksi->informasi }} </li>
                                         <li class="list-group-item"></li>
                                     </ul>
                                 </div>
@@ -77,6 +80,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </section>
     </main>

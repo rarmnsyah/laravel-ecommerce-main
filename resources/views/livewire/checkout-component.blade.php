@@ -15,7 +15,7 @@
                     @if (Session::has('success'))
                         <div class="alert alert-success" role="alert">{{ session('success')}}</div>
                     @elseif (Session::has('failed'))
-                        <div class="alert alert-danger" role="alert"><a href="{{route('user.dashboard')}}">{{ Session('failed') }}</a></div>
+                        <div class="alert alert-danger" role="alert"><a href="{{route('user.dashboard', ['user_id' => auth()->user()->id])}}">{{ Session('failed') }}</a></div>
                     @endif
                 </div>
                 <div class="row">

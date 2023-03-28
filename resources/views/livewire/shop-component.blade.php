@@ -201,23 +201,6 @@
                             </div>
                             <div class="list-group">
                                 <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900">Color</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox1" value="">
-                                        <label class="form-check-label" for="exampleCheckbox1"><span>Red
-                                                (56)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox2" value="">
-                                        <label class="form-check-label" for="exampleCheckbox2"><span>Green
-                                                (78)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox3" value="">
-                                        <label class="form-check-label" for="exampleCheckbox3"><span>Blue
-                                                (54)</span></label>
-                                    </div>
                                     <label class="fw-900 mt-15">Item Condition</label>
                                     <div class="custome-checkbox">
                                         <input class="form-check-input" type="checkbox" name="checkbox"
@@ -252,7 +235,7 @@
                                         <img src="{{ asset('assets/imgs/products') }}/{{ $nproduct->image }}" alt="#">
                                     </div>
                                     <div class="content pt-10">
-                                        <h5><a href="product-details.html">{{ $nproduct->name }}</a></h5>
+                                        <h5><a href="{{ route('product.details', ['slug'=>$nproduct->slug])}}">{{ $nproduct->name }}</a></h5>
                                         <p class="price mb-0 mt-5">${{ $nproduct->regular_price }}</p>
                                         <div class="product-rate">
                                             <div class="product-rating" style="width:90%"></div>

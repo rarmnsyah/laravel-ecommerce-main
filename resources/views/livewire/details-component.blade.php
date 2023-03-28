@@ -1,4 +1,22 @@
 <div>
+    <style>
+        nav svg {
+            height: 20px;
+        }
+
+        nav .hidden {
+            display: block;
+        }
+
+        .wishlisted {
+            background-color: #F15412 !important;
+            border: 1px solid transparent !important;
+        }
+
+        .wishlisted i {
+            color: #fff !important;
+        }
+    </style>
     <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -124,11 +142,25 @@
                                                         class="fi-rs-angle-small-up"></i></a>
                                             </div>
                                             <div class="product-extra-link2">
+                                                @php
+                                                    $witems = Cart::instance('wishlist')
+                                                        ->content()
+                                                        ->pluck('id');
+                                                @endphp
                                                 <button type="button" class="button button-add-to-cart"
                                                     wire:click.prevent="store({{ auth()->user()->id }}, {{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
                                                     to cart</button>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="{{ route('shop.wishlist') }}"><i class="fi-rs-heart"></i></a>
+                                                @if ($witems->contains($product->id))
+                                                    <a aria-label="Remove From Wishlist"
+                                                        class="action-btn hover-up wishlisted" href="#"
+                                                        wire:click.prevent="removeFromWishList({{ $product->id }})"><i
+                                                            class="fi-rs-heart"></i></a>
+                                                @else
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                        href="#"
+                                                        wire:click.prevent="addToWishList({{ auth()->user()->id }}, {{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
+                                                            class="fi-rs-heart"></i></a>
+                                                @endif
                                                 <a aria-label="Compare" class="action-btn hover-up"
                                                     href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                             </div>

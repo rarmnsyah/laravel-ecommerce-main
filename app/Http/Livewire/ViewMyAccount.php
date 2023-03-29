@@ -13,4 +13,12 @@ class ViewMyAccount extends Component
             'transaksis' => transaksi::where('id_pembeli', auth()->user()->id)->latest()->paginate(5)
         ]);
     }
+
+    // public function mount($user_id){
+        
+    // }
+
+    // public function updateProfile(){
+
+    // }
 }

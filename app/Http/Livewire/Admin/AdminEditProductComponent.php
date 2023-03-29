@@ -31,7 +31,7 @@ class AdminEditProductComponent extends Component
         $product = Product::find($product_id);
         $this->product_id = $product->id;
         $this->name = $product->name;
-        $this->slug = $product->slug;
+        $this->slug = $product->slug;   
         $this->short_description = $product->short_description;
         $this->description = $product->description;
         $this->regular_price = $product->regular_price;

@@ -30,6 +30,8 @@
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-fill-out btn-block hover-up" name="login">Log in</button>
                                             </div>
+                                            <a class="text-muted" href="{{ route('password.request')}}">Forgot password?</a>
+
                                         </form>
                                     </div>
                                 </div>

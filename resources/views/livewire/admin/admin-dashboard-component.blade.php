@@ -19,12 +19,12 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" id="orders-tab" data-bs-toggle="tab"
                                                 href="#orders" role="tab" aria-controls="orders"
-                                                aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Orders</a>
+                                                aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Produk Dipesan</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" id="statistik-tab" data-bs-toggle="tab"
                                                 href="#statistik" role="tab" aria-controls="statistik"
-                                                aria-selected="true"><i class="fi-rs-user mr-10"></i>Statistik Penjualan</a>
+                                                aria-selected="true"><i class="fi-rs-user mr-10"></i>Alamat Toko</a>
                                         </li>
                                     </ul>
                                 </div>

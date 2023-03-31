@@ -98,7 +98,7 @@
                                     <div class="tab-pane fade" id="address" role="tabpanel"
                                         aria-labelledby="address-tab">
                                         <div class="row">
-                                            @if (auth()->user()->utype === 'USR')
+                                            @if (isset(auth()->user()->alamat) or isset(auth()->user()->regency) or isset(auth()->user()->province))
                                                 <div class="col-lg-6">
                                                     <div class="card mb-3 mb-lg-0">
                                                         <div class="card-header">
@@ -115,20 +115,32 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @else
-                                                <div class="col-lg-6">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            <h5 class="mb-0">Shipping Address</h5>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <address>4299 Express Lane<br>
-                                                                Sarasota, <br>FL 00000 USA <br>Phone: 1.000.000.0000
-                                                            </address>
-                                                            <p>Sarasota</p>
-                                                            <a href="#" class="btn-small">Edit</a>
+                                                @if (auth()->user()->utype === 'ADM')
+                                                    <div class="col-lg-6">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h5 class="mb-0">Shipping Address</h5>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <address>4299 Express Lane<br>
+                                                                    Sarasota, <br>FL 00000 USA <br>Phone: 1.000.000.0000
+                                                                </address>
+                                                                <p>Sarasota</p>
+                                                                <a href="#" class="btn-small">Edit</a>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                @endif
+                                            @else
+                                                <div class="card-header">
+                                                    <h5 class="mb-0">Hello {{ auth()->user()->name }}! </h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>From your account dashboard. you can easily check &amp;
+                                                        view your <a href="#">recent orders</a>, manage
+                                                        your <a href="#">shipping and billing
+                                                            addresses</a> and <a href="#">edit your
+                                                            password and account details.</a></p>
                                                 </div>
                                             @endif
                                         </div>

@@ -134,13 +134,6 @@
                                         </div>
                                         <div class="bt-1 border-color-1 mt-30 mb-30"></div>
                                         <div class="detail-extralink">
-                                            <div class="detail-qty border radius">
-                                                <a href="#" class="qty-down"><i
-                                                        class="fi-rs-angle-small-down"></i></a>
-                                                <span class="qty-val">1</span>
-                                                <a href="#" class="qty-up"><i
-                                                        class="fi-rs-angle-small-up"></i></a>
-                                            </div>
                                             <div class="product-extra-link2">
                                                 @php
                                                     $witems = Cart::instance('wishlist')
@@ -148,7 +141,7 @@
                                                         ->pluck('id');
                                                 @endphp
                                                 <button type="button" class="button button-add-to-cart"
-                                                    wire:click.prevent="store({{ auth()->user()->id }}, {{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
+                                                    wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
                                                     to cart</button>
                                                 @if ($witems->contains($product->id))
                                                     <a aria-label="Remove From Wishlist"
@@ -158,7 +151,7 @@
                                                 @else
                                                     <a aria-label="Add To Wishlist" class="action-btn hover-up"
                                                         href="#"
-                                                        wire:click.prevent="addToWishList({{ auth()->user()->id }}, {{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
+                                                        wire:click.prevent="addToWishList({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
                                                             class="fi-rs-heart"></i></a>
                                                 @endif
                                             </div>

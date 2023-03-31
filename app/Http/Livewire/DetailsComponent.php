@@ -16,7 +16,7 @@ class DetailsComponent extends Component
         $this->slug = $slug;
     }
 
-    public function addToWishList($user_id ,$product_id, $product_name, $product_price){
+    public function addToWishList($product_id, $product_name, $product_price){
         Cart::instance('wishlist')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
         // Cart::instance('wishlist')->store($user_id, $product_id,$product_name,1,$product_price);
         $this->emitTo('wish-list-icon-component', 'refreshComponent');
@@ -32,7 +32,7 @@ class DetailsComponent extends Component
         }
     }
 
-    public function store($user_id, $product_id, $product_name, $product_price){
+    public function store($product_id, $product_name, $product_price){
         // Cart::add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
         // Cart::instance($user_id)->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
         // Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product')->store($user_id);

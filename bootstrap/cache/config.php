@@ -522,11 +522,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'sandbox.smtp.mailtrap.io',
-        'port' => '2525',
+        'host' => 'smtp.gmail.com',
+        'port' => '465',
         'encryption' => 'tls',
-        'username' => '61137b9ca998e2',
-        'password' => '23ed16362b72ca',
+        'username' => 'rarmnsyah787@gmail.com',
+        'password' => 'dveywhgrqoaufqjz',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
@@ -568,7 +568,7 @@
     ),
     'from' => 
     array (
-      'address' => 'support@ytta.com',
+      'address' => 'support_ytta@gmail.com',
       'name' => 'YTTA',
     ),
     'markdown' => 

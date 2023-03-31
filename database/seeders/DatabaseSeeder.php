@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
             'utype' => 'USR'
         ]);
         \App\Models\Category::factory()->create([
-            'name' => 'Product',
-            'slug' => 'product',
+            'name' => 'Jasa',
+            'slug' => 'jasa',
         ]);
         \App\Models\Category::factory()->create([
             'name' => 'Barang',

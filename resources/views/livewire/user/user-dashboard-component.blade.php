@@ -131,12 +131,13 @@
                                     <div class="@error('provinsi') border border-danger rounded-3 @enderror">
                                         <select name="provinsi" class="form-control" id="provinsi"
                                             wire:model="provinsi">
+                                            <option value ="">Pilih Provinsi</option>
                                             @foreach ($provinces as $province)
                                                 @if (old('provinsi', auth()->user()->provinsi) == $province->id)
                                                     <option value="{{ $province->id }}" selected>
                                                         {{ $province->name }}</option>
                                                 @endif
-                                                <option selected value ="{{ $province->id }}">{{ $province->name }}</option>
+                                                <option value ="{{ $province->id }}">{{ $province->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -148,6 +149,7 @@
                                     <div class="@error('kabupaten') border border-danger rounded-3 @enderror">
                                         <select name="kabupaten" class="form-control" id="kabupaten"
                                             wire:model="kabupaten">
+                                            <option  value ="">Pilih Kabupaten</option>
                                             @foreach ($regencys as $regency)
                                                 @if (old('kabupaten', auth()->user()->kabupaten) == $regency->id)
                                                     <option value="{{ $regency->id }}" selected>{{ $regency->name }}

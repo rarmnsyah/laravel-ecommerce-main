@@ -19,12 +19,18 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" id="orders-tab" data-bs-toggle="tab"
                                                 href="#orders" role="tab" aria-controls="orders"
-                                                aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Produk Dipesan</a>
+                                                aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Produk
+                                                Dipesan</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="statistik-tab" data-bs-toggle="tab"
-                                                href="#statistik" role="tab" aria-controls="statistik"
-                                                aria-selected="true"><i class="fi-rs-user mr-10"></i>Alamat Toko</a>
+                                            <a class="nav-link" id="alamat-tab" data-bs-toggle="tab" href="#alamat"
+                                                role="tab" aria-controls="alamat" aria-selected="true"><i
+                                                    class="fi-rs-user mr-10"></i>Alamat Toko</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="produk-tab" data-bs-toggle="tab" href="#produk"
+                                                role="tab" aria-controls="produk" aria-selected="true"><i
+                                                    class="fi-rs-user mr-10"></i>Tambah Produk</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -80,8 +86,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="statistik" role="tabpanel"
-                                        aria-labelledby="statistik-tab">
+                                    <div class="tab-pane fade" id="alamat" role="tabpanel"
+                                        aria-labelledby="alamat-tab">
                                         <div class="card">
                                             <div class="card-header">
                                                 <h5>Account Details</h5>
@@ -107,8 +113,7 @@
                                                                 name="dname" type="text">
                                                         </div>
                                                         <div class="form-group col-md-12">
-                                                            <label>Email Address <span
-                                                                    class="required">*</span></label>
+                                                            <label>Email Address <span class="required">*</span></label>
                                                             <input required="" class="form-control square"
                                                                 name="email" type="email">
                                                         </div>
@@ -135,6 +140,19 @@
                                                         </div>
                                                     </div>
                                                 </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="produk" role="tabpanel"
+                                        aria-labelledby="produk-tab">
+                                        <div class="row">
+                                            <div class="card-header">
+                                                <h5 class="mb-0">Hello {{ auth()->user()->name }}! </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <p>Untuk menambah produk, silahkan
+                                                    klik <a href="{{ route('admin.product.add') }}">tambah produk</a>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

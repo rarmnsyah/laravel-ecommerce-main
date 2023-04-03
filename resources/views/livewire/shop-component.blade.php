@@ -121,9 +121,6 @@
                                                 <a aria-label="Compare" class="action-btn hover-up"
                                                     href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                             </div>
-                                            <div class="product-badges product-badges-position product-badges-mrg">
-                                                <span class="hot">Hot</span>
-                                            </div>
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
@@ -150,7 +147,7 @@
                                                 @else
                                                     <a aria-label="Add To Wishlist" class="action-btn hover-up"
                                                         href="#"
-                                                        wire:click.prevent="addToWishList({{auth()->user()->id}}, {{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
+                                                        wire:click.prevent="addToWishList({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
                                                             class="fi-rs-heart"></i></a>
                                                 @endif
                                                 <a aria-label="Add To Cart" class="action-btn hover-up" href="#"

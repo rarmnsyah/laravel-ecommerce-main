@@ -72,20 +72,6 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        <label for="sale_price" class="form-label">Sale Price</label>
-                                        <input type="text"  name="sale_price" class="form-control" placeholder="Enter product sale price" wire:model="sale_price"/>
-                                        @error('sale_price')
-                                            <p class="text-danger">{{$message}}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3 mt-3">
-                                        <label for="sku" class="form-label">SKU</label>
-                                        <input type="text"  name="sku" class="form-control" placeholder="Enter sku" wire:model="sku"/>
-                                        @error('sku')
-                                            <p class="text-danger">{{$message}}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3 mt-3">
                                         <label for="stock_status" class="form-label" wire:model="stock_status">Stock Status</label>
                                         <select class="form-control">
                                             <option value="instock">InStock</option>

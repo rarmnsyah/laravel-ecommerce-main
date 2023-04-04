@@ -125,27 +125,18 @@
                                     <li><a href="/">Home </a></li>
                                     <li><a href="{{ route('shop') }}">Shop</a></li>
                                     @auth
-                                        @if (auth()->user()->utype == 'ADM')
-                                            <li><a href="{{ route('user.myaccount') }}">My Account<i
-                                                        class="fi-rs-angle-down"></i></a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="{{ route('user.myaccount') }}">Account</a></li>
-                                                    <li><a
-                                                            href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
-                                                    </li>
-                                                    <li><a href="{{ route('admin.products') }}">Products</a></li>
-                                                </ul>
+                                    <li><a href="{{ route('user.myaccount') }}">My Account<i
+                                                class="fi-rs-angle-down"></i></a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{{ route('user.myaccount') }}">Account</a></li>
+                                            <li><a
+                                                    href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
                                             </li>
+                                        </ul>
+                                    </li>
+                                        @if (auth()->user()->utype == 'ADM')
                                             <li><a href="{{ route('admin.dashboard') }}">Toko Saya</a></li>
                                         @else
-                                            <li><a href="{{ route('user.myaccount') }}">My Account<i
-                                                        class="fi-rs-angle-down"></i></a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="{{ route('user.myaccount') }}">Account</a></li>
-                                                    <li><a
-                                                            href="{{ route('user.dashboard', ['user_id' => auth()->user()->id]) }}">Dashboard</a>
-                                                    </li>
-                                                </ul>
                                             <li><a href="{{ route('user.show') }}">Toko Saya</a></li>
                                         @endif
                                     @endauth

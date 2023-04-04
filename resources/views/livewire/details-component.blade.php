@@ -134,10 +134,6 @@
                                             href="#Description">Description</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab"
-                                            href="#Additional-info">Additional info</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab"
                                             href="#Reviews">Reviews (3)</a>
                                     </li>
@@ -147,96 +143,6 @@
                                         <div class="">
                                             {{ $product->description }}
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="Additional-info">
-                                        <table class="font-md">
-                                            <tbody>
-                                                <tr class="stand-up">
-                                                    <th>Stand Up</th>
-                                                    <td>
-                                                        <p>35″L x 24″W x 37-45″H(front to back wheel)</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="folded-wo-wheels">
-                                                    <th>Folded (w/o wheels)</th>
-                                                    <td>
-                                                        <p>32.5″L x 18.5″W x 16.5″H</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="folded-w-wheels">
-                                                    <th>Folded (w/ wheels)</th>
-                                                    <td>
-                                                        <p>32.5″L x 24″W x 18.5″H</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="door-pass-through">
-                                                    <th>Door Pass Through</th>
-                                                    <td>
-                                                        <p>24</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="frame">
-                                                    <th>Frame</th>
-                                                    <td>
-                                                        <p>Aluminum</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="weight-wo-wheels">
-                                                    <th>Weight (w/o wheels)</th>
-                                                    <td>
-                                                        <p>20 LBS</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="weight-capacity">
-                                                    <th>Weight Capacity</th>
-                                                    <td>
-                                                        <p>60 LBS</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="width">
-                                                    <th>Width</th>
-                                                    <td>
-                                                        <p>24″</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="handle-height-ground-to-handle">
-                                                    <th>Handle height (ground to handle)</th>
-                                                    <td>
-                                                        <p>37-45″</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="wheels">
-                                                    <th>Wheels</th>
-                                                    <td>
-                                                        <p>12″ air / wide track slick tread</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="seat-back-height">
-                                                    <th>Seat back height</th>
-                                                    <td>
-                                                        <p>21.5″</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="head-room-inside-canopy">
-                                                    <th>Head room (inside canopy)</th>
-                                                    <td>
-                                                        <p>25″</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="pa_color">
-                                                    <th>Color</th>
-                                                    <td>
-                                                        <p>Black, Blue, Red, White</p>
-                                                    </td>
-                                                </tr>
-                                                <tr class="pa_size">
-                                                    <th>Size</th>
-                                                    <td>
-                                                        <p>M, S</p>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                     <div class="tab-pane fade" id="Reviews">
                                         <!--Comments-->
@@ -492,29 +398,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="list-group">
-                                <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900 mt-15">Item Condition</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"><span>New
-                                                (1506)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox21" value="">
-                                        <label class="form-check-label" for="exampleCheckbox21"><span>Refurbished
-                                                (27)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox31" value="">
-                                        <label class="form-check-label" for="exampleCheckbox31"><span>Used
-                                                (45)</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="shop.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i>
-                                Fillter</a>
                         </div>
                         <!-- Product sidebar Widget -->
                         <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
@@ -525,7 +408,7 @@
                             @foreach ($nproducts as $nproduct)
                                 <div class="single-post clearfix">
                                     <div class="image">
-                                        <img src="{{ asset('assets/imgs/shop/product-') }}{{ $nproduct->id }}-1.jpg"
+                                        <img src="{{ asset('assets/imgs/products') }}/{{ $nproduct->image }}"
                                             alt="{{ $nproduct->name }}">
                                     </div>
                                     <div class="content pt-10">

@@ -107,9 +107,6 @@
                                                     <img class="default-img"
                                                         src="{{ asset('assets/imgs/products') }}/{{ $product->image }}"
                                                         alt="{{ $product->name }}">
-                                                    <img class="hover-img"
-                                                        src="{{ asset('assets/imgs/shop/product-') }}{{ $product->id }}-2.jpg"
-                                                        alt="{{ $product->name }}">
                                                 </a>
                                             </div>
                                         </div>

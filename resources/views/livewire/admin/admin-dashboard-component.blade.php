@@ -23,14 +23,14 @@
                                                 Dipesan</a>
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" id="produk-tab" data-bs-toggle="tab" href="#produk"
+                                                role="tab" aria-controls="produk" aria-selected="true"><i
+                                                    class="fi-rs-user mr-10"></i>List Product</a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" id="alamat-tab" data-bs-toggle="tab" href="#alamat"
                                                 role="tab" aria-controls="alamat" aria-selected="true"><i
                                                     class="fi-rs-user mr-10"></i>Alamat Toko</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="produk-tab" data-bs-toggle="tab" href="#produk"
-                                                role="tab" aria-controls="produk" aria-selected="true"><i
-                                                    class="fi-rs-user mr-10"></i>Tambah Produk</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -82,6 +82,64 @@
                                                 </div>
                                                 <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
                                                     {{ $transaksis->links() }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="produk" role="tabpanel"
+                                        aria-labelledby="produk-tab">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        All products
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <a href="{{ route('admin.product.add')}}" class="btn btn-success float-end">Add New Product</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>Image</th>
+                                                                <th>Name</th>
+                                                                <th>Stock</th>
+                                                                <th>Price</th>
+                                                                <th>Category</th>
+                                                                <th>Date</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @php
+                                                                $i = ($products->currentPage()-1)*$products->perPage();
+                                                            @endphp
+                                                            @foreach($products as $product)
+                                                                @if ($product->user_id == auth()->user()->id)
+                                                                    <tr>
+                                                                        <td>{{++$i}}</td>
+                                                                        <td><img src="{{ asset('assets/imgs/products')}}/{{$product->image}}" alt="{{$product->name}}" width="60" /></td>
+                                                                        <td>{{$product->name}}</td>
+                                                                        <td>{{$product->stock_status}}</td>
+                                                                        <td>{{$product->regular_price}}</td>
+                                                                        <td>{{$product->category->name}}</td>
+                                                                        <td>{{$product->created_at}}</td>
+                                                                        <td>
+                                                                            <a href="{{ route('admin.product.edit', ['product_id'=>$product->id])}}" class="text-info">Edit</a>
+                                                                            <a href="#" onclick="deleteConfirmation({{$product->id}})" class="text-danger">Delete</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                @endif
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
+                                                    {{ $products->links() }}
                                                 </div>
                                             </div>
                                         </div>
@@ -140,19 +198,6 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="produk" role="tabpanel"
-                                        aria-labelledby="produk-tab">
-                                        <div class="row">
-                                            <div class="card-header">
-                                                <h5 class="mb-0">Hello {{ auth()->user()->name }}! </h5>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>Untuk menambah produk, silahkan
-                                                    klik <a href="{{ route('admin.product.add') }}">tambah produk</a>
-                                                </p>
                                             </div>
                                         </div>
                                     </div>

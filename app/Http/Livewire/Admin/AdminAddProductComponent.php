@@ -31,6 +31,7 @@ class AdminAddProductComponent extends Component
     }
 
     public function addProduct(){
+        // dd($this->description)/;
         $this->validate([
             'name'=>'required',
             'slug'=>'required',

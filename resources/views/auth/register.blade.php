@@ -48,8 +48,13 @@
                                                 <input type="text" required="" name="token" placeholder="Token" :value="old('token')" required>
                                             </div> --}}
                                             <div class="form-group">
-                                                <input required=""type="password" name="password"
+                                                <input required="" class="@error('password') is-invalid @enderror" type="password" name="password"
                                                     placeholder="Password" required autocomplete="new-password">
+                                                @error('password')
+                                                    <div class="invalid-feedback mb-2">
+                                                        <small>{{ $message }}</small>
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <input required="" type="password" name="password_confirmation"

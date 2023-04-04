@@ -1,9 +1,9 @@
 <x-app-layout>
-<main class="main">
+    <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="/" rel="nofollow">Home</a>                    
+                    <a href="/" rel="nofollow">Home</a>
                     <span></span> Login
                 </div>
             </div>
@@ -14,23 +14,41 @@
                     <div class="col-lg-10 m-auto">
                         <div class="row">
                             <div class="col-lg-5">
-                                <div class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
+                                <div
+                                    class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
                                     <div class="padding_eight_all bg-white">
+                                        @if (session()->has('failed'))
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <strong>Failed Login!</strong> Wrong email or password
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                        @endif
                                         <div class="heading_s1">
                                             <h3 class="mb-30">Login</h3>
                                         </div>
-                                        <form method="post" action="{{ route('login')}}">
+                                        <form method="post" action="{{ route('login') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="text" required="" name="email" placeholder="Your Email" :value="old('email')" require autofocus>
+                                                <input type="text" class="@error('email') is-invalid @enderror"
+                                                    required="" name="email" placeholder="Your Email"
+                                                    :value="old('email')" require autofocus>
+                                                @error('email')
+                                                    <div class="invalid-feedback mb-2">
+                                                        <small>{{ $message }}</small>
+                                                    </div>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Password" require autocomplete="current-password">
+                                                <input required="" type="password" name="password"
+                                                    placeholder="Password" require autocomplete="current-password">
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-fill-out btn-block hover-up" name="login">Log in</button>
+                                                <button type="submit" class="btn btn-fill-out btn-block hover-up"
+                                                    name="login">Log in</button>
                                             </div>
-                                            <a class="text-muted" href="{{ route('password.request')}}">Forgot password?</a>
+                                            <a class="text-muted" href="{{ route('password.request') }}">Forgot
+                                                password?</a>
 
                                         </form>
                                     </div>

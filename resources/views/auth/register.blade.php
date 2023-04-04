@@ -35,7 +35,7 @@
                                                 <input type="text" class="@error('email') is-invalid @enderror"
                                                     required="" name="email" placeholder="Email"
                                                     :value="old('email')" required>
-                                                @error('name')
+                                                @error('email')
                                                     <div class="invalid-feedback mb-2">
                                                         <small>{{ $message }}</small>
                                                     </div>

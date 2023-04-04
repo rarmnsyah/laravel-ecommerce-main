@@ -112,15 +112,6 @@
                                                         alt="{{ $product->name }}">
                                                 </a>
                                             </div>
-                                            <div class="product-action-1">
-                                                <a aria-label="Quick view" class="action-btn hover-up"
-                                                    data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                                                    <i class="fi-rs-search"></i></a>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up"
-                                                    href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                            </div>
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
@@ -196,29 +187,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="list-group">
-                                <div class="list-group-item mb-10 mt-10">
-                                    <label class="fw-900 mt-15">Item Condition</label>
-                                    <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"><span>New
-                                                (1506)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox21" value="">
-                                        <label class="form-check-label" for="exampleCheckbox21"><span>Refurbished
-                                                (27)</span></label>
-                                        <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox"
-                                            id="exampleCheckbox31" value="">
-                                        <label class="form-check-label" for="exampleCheckbox31"><span>Used
-                                                (45)</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="shop.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i>
-                                Fillter</a>
                         </div>
                         <!-- Product sidebar Widget -->
                         <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
@@ -229,7 +197,7 @@
                             @foreach ($nproducts as $nproduct)
                                 <div class="single-post clearfix">
                                     <div class="image">
-                                        <img src="{{ asset('assets/imgs/products') }}/{{ $nproduct->image }}" alt="#">
+                                        <img src="{{ asset('assets/imgs/products') }}/{{$nproduct->image}}" alt="#">
                                     </div>
                                     <div class="content pt-10">
                                         <h5><a href="{{ route('product.details', ['slug'=>$nproduct->slug])}}">{{ $nproduct->name }}</a></h5>

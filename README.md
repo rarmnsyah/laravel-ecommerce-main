@@ -2,8 +2,8 @@ Ini adalah website e-commerce second hand dari pak FranciscoMontenegro97 yang sa
 1. clone github ini, cari tau dewek la
 2. cd ke folder
 3. jalankan di terminal copy .env.example .env
-. php artisan config:cache
-. php artisan key:generate
+3.1 php artisan config:cache
+3.2 php artisan key:generate
 4. jalankan di terminal composer install
 5. jalankan di terminal composer require gloudemans/shoppingcart
 5. sesuaikan database key dengan database anda

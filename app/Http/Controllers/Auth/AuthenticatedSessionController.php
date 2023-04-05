@@ -27,7 +27,8 @@ class AuthenticatedSessionController extends Controller
     {
         // $request->authenticate();
         $credentials = $request->validate([
-            'email' => ['required', 'email:dns'],
+            // 'email' => ['required', 'email:dns'],
+            'email' => ['required'],
             'password' => 'required',
         ]);
 

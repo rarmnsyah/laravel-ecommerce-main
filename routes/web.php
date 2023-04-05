@@ -58,18 +58,17 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/user/myAccount', ViewMyAccount::class)->name('user.myaccount');
     Route::get('/cart', CartComponent::class)->name('shop.cart');
     Route::get('/wishlist', WishlistComponent::class)->name('shop.wishlist');
-    // Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
-    // Route::get('/user/transaksi/{transaksi_id}', UserTransaksiComponent::class)->name('user.transaksi');
-    // Route::get('/user/comment/{transaksi_id}', UserMakeCommentsComponent::class)->name('user.comment');
 });
 
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/user/edit',[ChangeUserType::class, 'index'])->name('user.show');
     Route::post('/user/edit/{user:id}',[ChangeUserType::class, 'update']);
-    Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
+    // Route::post('/checkout', [CheckoutComponent::class, 'storeCheckout'])->name('shop.checkout2');
     Route::get('/user/transaksi/{transaksi_id}', UserTransaksiComponent::class)->name('user.transaksi');
     Route::get('/user/comment/{transaksi_id}', UserMakeCommentsComponent::class)->name('user.comment');
 });
+
+Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout')->middleware(['auth', 'verified', 'password.confirm']);
 
 Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
@@ -80,7 +79,6 @@ Route::middleware(['auth', 'authadmin'])->group(function(){
     Route::get('admin/slider/add', AdminAddHomeSlideComponent::class)->name('admin.home.slide.add');
     Route::get('admin/slider/edit/{slide_id}', AdminEditHomeSlideComponent::class)->name('admin.home.slide.edit');
     Route::get('admin/transaksi/{transaksi_id}', AdminKonfirmasiPembelianComponent::class)->name('admin.transaksi');
-    // Route::get('admin/notifikasi', AdminNotifikasiComponent::class)->name('admin.notifikasi');
 });
 
 require __DIR__.'/auth.php';

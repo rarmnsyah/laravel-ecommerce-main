@@ -43,8 +43,9 @@
                                     <h4>Detail Produk</h4>
                                     <ul class="list-group list-group-flush  ">
                                         <li class="list-group-item">Nama : {{ $transaksi->product->name }}</li>
+                                        <li class="list-group-item">Gambar : <img src="{{asset('assets/imgs/products')}}/{{ $transaksi->product->image }}" alt=""></li>
                                         <li class="list-group-item">Deskripsi :
-                                            {{ $transaksi->product->short_description }}
+                                            {{ $transaksi->product->description }}
                                         </li>
                                         <li class="list-group-item">Harga : $ {{ $transaksi->product->regular_price }}
                                         </li>

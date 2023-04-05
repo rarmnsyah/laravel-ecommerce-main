@@ -91,6 +91,7 @@
                                     <div class="@error('jenis_kelamin') border border-danger rounded-3 @enderror">
                                         <select name="jenis_kelamin" class="form-control" id="jenis_kelamin"
                                             wire:model="jenis_kelamin">
+                                            <option selected value="">Pilih Jenis Kelamin</option>
                                             <option value="Laki-Laki">Laki-laki</option>
                                             <option value="Perempuan">Perempuan</option>
                                         </select>
@@ -106,20 +107,6 @@
                                             wire:model="tanggal_lahir" name="tanggal_lahir"
                                             value="{{ auth()->user()->tanggal_lahir }}">
                                         @error('tanggal_lahir')
-                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="phone_number"
-                                        class="form-control-label">{{ __('Nomor Handphone (Whatsapp)') }}</label>
-                                    <div class="@error('phone_number')border border-danger rounded-3 @enderror">
-                                        <input class="form-control" value="{{ auth()->user()->phone_number }}"
-                                            type="text" placeholder="" id="phone_number"
-                                            wire:model="phone_number" name="phone_number">
-                                        @error('phone_number')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
                                     </div>
@@ -158,6 +145,20 @@
                                                 <option selected value ="{{ $regency->id }}">{{ $regency->name }}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone_number"
+                                        class="form-control-label">{{ __('Nomor Handphone (Whatsapp)') }}</label>
+                                    <div class="@error('phone_number')border border-danger rounded-3 @enderror">
+                                        <input class="form-control" value="{{ auth()->user()->phone_number }}"
+                                            type="text" placeholder="" id="phone_number"
+                                            wire:model="phone_number" name="phone_number">
+                                        @error('phone_number')
+                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>

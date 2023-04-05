@@ -387,7 +387,43 @@ class DatabaseSeeder extends Seeder
             'quantity' => 1,
             'image' => '4-1.jpg'
         ]);
-        \App\Models\HomeSlider::factory(2)->create();
+        \App\Models\Product::factory()->create([
+            'name' => 'Fixing and Develop Website',
+            'slug' => 'Fixing-and-Develop-Website',
+            'short_description' => 'I will fix or develop PHP, laravel, codeigniter, or reactjs website',
+            'description' => 'Facing any bugs or errors? no worries, leave it to me! I will fix it from root for you. 
+
+
+
+            Below are some different bugs that you might be encountering in your web app. 
+            
+            
+            
+            PHP Issue
+            WordPress Issue
+            HTML Issue
+            CSS Issue
+            JavaScript Issue
+            JQuery Issue
+            Laravel Issue
+            CodeIgniter Issue 
+            ReactJs Issue
+            
+            
+            If you think that your bug is not related to any above categories, just inbox me and I ll be happy to take a look at it ',
+            'regular_price' => 100,
+            'category_id' => 2,
+            'user_id' => 2,
+            'quantity' => 1,
+            'image' => '7-1.jpg'
+        ]);
+        \App\Models\HomeSlider::factory()->create([
+            'top_title'=>'Diskon Pelanggan Pertama !',
+            'title'=>'Mobile App',
+            'sub_title'=>'Development',
+            'image'=>'slider-3.jpg',
+            'link'=>'http://127.0.0.1:8000/product/expert-mobile-app-developer'
+        ]);
 
         $this->call(IndoRegionProvinceSeeder::class);
         $this->call(IndoRegionRegencySeeder::class);

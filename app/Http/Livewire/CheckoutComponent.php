@@ -2,11 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\transaksi;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\ValidationException;
 
 class CheckoutComponent extends Component
 {
@@ -18,8 +21,8 @@ class CheckoutComponent extends Component
 
     public function storeCheckout()
     {
-        // dd($this->information);
         $carts = Cart::instance('cart')->content();
+        // dd($carts);
         if (auth()->user()->alamat === null or auth()->user()->kabupaten === null or auth()->user()->provinsi === null) {
             return redirect(route('shop.checkout'))->with('failed', 'Maaf, Pesanan Anda Gagal Diproses Silahkan Lengkapi Profil Anda!');
         } else if (!$carts) {
@@ -53,6 +56,7 @@ class CheckoutComponent extends Component
         // return redirect(route('shop.checkout'))->with('success', 'Selamat, Pesanan Anda Berhasil!');     
         session()->flash('success', 'Selamat, Pesanan Anda Berhasil Diproses!');
     }
+
 
     public function render()
     {

@@ -2,16 +2,17 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
-use App\Models\HomeSlider;
+use App\Models\User;
 use App\Models\Product;
+use Livewire\Component;
 use App\Models\Category;
 use App\Models\transaksi;
-use App\Models\User;
+use App\Models\HomeSlider;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Contracts\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\DB;
 
 class HomeComponent extends Component
 {
@@ -31,6 +32,9 @@ class HomeComponent extends Component
         //     ->orderBy("total", "DESC")
         //     ->limit(10)
         //     ->get();
+        // if (Auth::check()) {
+        //     Cart::instance('cart')->restore(Auth::user()->email);
+        // }
 
         $pproducts = DB::table('transaksis')
             ->join('products', 'transaksis.product_id', '=', 'products.id')

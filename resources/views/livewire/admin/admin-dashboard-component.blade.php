@@ -27,11 +27,11 @@
                                                 role="tab" aria-controls="produk" aria-selected="true"><i
                                                     class="fi-rs-user mr-10"></i>List Product</a>
                                         </li>
-                                        <li class="nav-item">
+                                        {{-- <li class="nav-item">
                                             <a class="nav-link" id="alamat-tab" data-bs-toggle="tab" href="#alamat"
                                                 role="tab" aria-controls="alamat" aria-selected="true"><i
                                                     class="fi-rs-user mr-10"></i>Alamat Toko</a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="alamat" role="tabpanel"
+                                    {{-- <div class="tab-pane fade" id="alamat" role="tabpanel"
                                         aria-labelledby="alamat-tab">
                                         <div class="card">
                                             <div class="card-header">
@@ -200,7 +200,7 @@
                                                 </form>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

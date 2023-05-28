@@ -27,7 +27,7 @@
                                         Edit Product
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="{{route('admin.products')}}" class="btn btn-success float-end">All Products</a>
+                                        <a href="{{route('admin.dashboard')}}" class="btn btn-success float-end">All Products</a>
                                     </div>
                                 </div>
                             </div>
@@ -68,20 +68,6 @@
                                         <label for="regular_price" class="form-label">Regular Price</label>
                                         <input type="text"  name="regular_price" class="form-control" placeholder="Enter regular price" wire:model="regular_price"/>
                                         @error('regular_price')
-                                            <p class="text-danger">{{$message}}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3 mt-3">
-                                        <label for="sale_price" class="form-label">Sale Price</label>
-                                        <input type="text"  name="sale_price" class="form-control" placeholder="Enter product sale price" wire:model="sale_price"/>
-                                        @error('sale_price')
-                                            <p class="text-danger">{{$message}}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="mb-3 mt-3">
-                                        <label for="sku" class="form-label">SKU</label>
-                                        <input type="text"  name="sku" class="form-control" placeholder="Enter sku" wire:model="sku"/>
-                                        @error('sku')
                                             <p class="text-danger">{{$message}}</p>
                                         @enderror
                                     </div>

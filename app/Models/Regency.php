@@ -45,16 +45,6 @@ class Regency extends Model
         return $this->belongsTo(Province::class);
     }
 
-    /**
-     * Regency has many districts.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function districts()
-    {
-        return $this->hasMany(District::class);
-    }
-
     public function user()
     {
         return $this->hasMany(User::class);

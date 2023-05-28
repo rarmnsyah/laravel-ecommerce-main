@@ -18,8 +18,6 @@ class AdminEditProductComponent extends Component
     public $short_description;
     public $description;
     public $regular_price;
-    public $sale_price;
-    public $sku;
     public $stock_status = 'instock';
     public $featured = 0;
     public $quantity;
@@ -35,8 +33,6 @@ class AdminEditProductComponent extends Component
         $this->short_description = $product->short_description;
         $this->description = $product->description;
         $this->regular_price = $product->regular_price;
-        $this->sale_price = $product->sale_price;
-        $this->sku = $product->SKU;
         $this->stock_status = $product->stock_status;
         $this->featured = $product->featured ;
         $this->quantity = $product->quantity;
@@ -55,8 +51,6 @@ class AdminEditProductComponent extends Component
             'short_description'=>'required',
             'description'=>'required',
             'regular_price'=>'required',
-            'sale_price'=>'required',
-            'sku'=>'required',
             'stock_status'=>'required',
             'featured'=>'required',
             'quantity'=>'required',
@@ -69,8 +63,6 @@ class AdminEditProductComponent extends Component
         $product->short_description = $this->short_description;
         $product->description = $this->description;
         $product->regular_price = $this->regular_price;
-        $product->sale_price = $this->sale_price;
-        $product->SKU = $this->sku;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;

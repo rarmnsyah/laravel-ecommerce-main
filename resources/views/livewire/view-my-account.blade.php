@@ -131,11 +131,7 @@
                                                     <h5 class="mb-0">Hello {{ auth()->user()->name }}! </h5>
                                                 </div>
                                                 <div class="card-body">
-                                                    <p>From your account dashboard. you can easily check &amp;
-                                                        view your <a href="#">recent orders</a>, manage
-                                                        your <a href="#">shipping and billing
-                                                            addresses</a> and <a href="#">edit your
-                                                            password and account details.</a></p>
+                                                    <p>Tampaknya, anda belum melakukan pengisian alamat, <a href="{{route('user.dashboard', ['user_id'=>auth()->user()->id])}}"> silahkan isi yaa !!</a></p>
                                                 </div>
                                             @endif
                                         </div>

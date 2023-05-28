@@ -17,15 +17,15 @@
                                 <div class="dashboard-menu">
                                     <ul class="nav flex-column" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="orders-tab" data-bs-toggle="tab"
-                                                href="#orders" role="tab" aria-controls="orders"
-                                                aria-selected="false"><i class="fi-rs-shopping-bag mr-10"></i>Produk
-                                                Dipesan</a>
+                                            <a class="nav-link active" id="produk-tab" data-bs-toggle="tab"
+                                                href="#produk" role="tab" aria-controls="produk"
+                                                aria-selected="true"><i class="fi-rs-user mr-10"></i>List Product</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="produk-tab" data-bs-toggle="tab" href="#produk"
-                                                role="tab" aria-controls="produk" aria-selected="true"><i
-                                                    class="fi-rs-user mr-10"></i>List Product</a>
+                                            <a class="nav-link" id="orders-tab" data-bs-toggle="tab" href="#orders"
+                                                role="tab" aria-controls="orders" aria-selected="false"><i
+                                                    class="fi-rs-shopping-bag mr-10"></i>Produk
+                                                Dipesan</a>
                                         </li>
                                         {{-- <li class="nav-item">
                                             <a class="nav-link" id="alamat-tab" data-bs-toggle="tab" href="#alamat"
@@ -37,7 +37,76 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="tab-content dashboard-content">
-                                    <div class="tab-pane fade active show" id="orders" role="tabpanel"
+                                    <div class="tab-pane fade active show" id="produk" role="tabpanel"
+                                        aria-labelledby="produk-tab">
+                                        @if (Session::has('message'))
+                                            <div class="alert alert-success" role="alert">
+                                                {{ Session::get('message') }}</div>
+                                        @endif
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        All products
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <a href="{{ route('admin.product.add') }}"
+                                                            class="btn btn-success float-end">Add New Product</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>Image</th>
+                                                                <th>Name</th>
+                                                                <th>Stock</th>
+                                                                <th>Price</th>
+                                                                <th>Category</th>
+                                                                <th>Date</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @php
+                                                                $i = ($products->currentPage() - 1) * $products->perPage();
+                                                            @endphp
+                                                            @foreach ($products as $product)
+                                                                @if ($product->user_id == auth()->user()->id)
+                                                                    <tr>
+                                                                        <td>{{ ++$i }}</td>
+                                                                        <td><img src="{{ asset('assets/imgs/products') }}/{{ $product->image }}"
+                                                                                alt="{{ $product->name }}"
+                                                                                width="60" /></td>
+                                                                        <td>{{ $product->name }}</td>
+                                                                        <td>{{ $product->stock_status }}</td>
+                                                                        <td>{{ $product->regular_price }}</td>
+                                                                        <td>{{ $product->category->name }}</td>
+                                                                        <td>{{ $product->created_at }}</td>
+                                                                        <td>
+                                                                            <a href="{{ route('admin.product.edit', ['product_id' => $product->id]) }}"
+                                                                                class="text-info">Edit</a>
+                                                                            <a href="#"
+                                                                                onclick="deleteConfirmation({{ $product->id }})"
+                                                                                class="text-danger">Delete</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                @endif
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
+                                                    {{ $products->links() }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade " id="orders" role="tabpanel"
                                         aria-labelledby="orders-tab">
                                         @if (Session::has('success'))
                                             <div class="alert alert-success" role="alert">
@@ -82,64 +151,6 @@
                                                 </div>
                                                 <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
                                                     {{ $transaksis->links() }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="produk" role="tabpanel"
-                                        aria-labelledby="produk-tab">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        All products
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <a href="{{ route('admin.product.add')}}" class="btn btn-success float-end">Add New Product</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <table class="table table-striped">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>#</th>
-                                                                <th>Image</th>
-                                                                <th>Name</th>
-                                                                <th>Stock</th>
-                                                                <th>Price</th>
-                                                                <th>Category</th>
-                                                                <th>Date</th>
-                                                                <th>Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @php
-                                                                $i = ($products->currentPage()-1)*$products->perPage();
-                                                            @endphp
-                                                            @foreach($products as $product)
-                                                                @if ($product->user_id == auth()->user()->id)
-                                                                    <tr>
-                                                                        <td>{{++$i}}</td>
-                                                                        <td><img src="{{ asset('assets/imgs/products')}}/{{$product->image}}" alt="{{$product->name}}" width="60" /></td>
-                                                                        <td>{{$product->name}}</td>
-                                                                        <td>{{$product->stock_status}}</td>
-                                                                        <td>{{$product->regular_price}}</td>
-                                                                        <td>{{$product->category->name}}</td>
-                                                                        <td>{{$product->created_at}}</td>
-                                                                        <td>
-                                                                            <a href="{{ route('admin.product.edit', ['product_id'=>$product->id])}}" class="text-info">Edit</a>
-                                                                            <a href="#" onclick="deleteConfirmation({{$product->id}})" class="text-danger">Delete</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                @endif
-                                                            @endforeach
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
-                                                    {{ $products->links() }}
                                                 </div>
                                             </div>
                                         </div>
@@ -210,3 +221,32 @@
         </section>
     </main>
 </div>
+
+<div class="modal" id="deleteConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body pb-30 pt-30">
+                <div class="col-md-12 text-center">
+                    <h4 class="pb-3">Do you want delete this record?</h4>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                        data-bs-target="#deleteConfirmation">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteProduct()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+    <script>
+        function deleteConfirmation(id) {
+            @this.set('product_id', id);
+            $('#deleteConfirmation').modal('show');
+        }
+
+        function deleteProduct() {
+            @this.call('deleteProduct');
+            $('#deleteConfirmation').modal('hide');
+        }
+    </script>
+@endpush
